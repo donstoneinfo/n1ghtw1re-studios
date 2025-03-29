@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom colors for retro hacker theme
+				hacker: {
+					green: '#4A7A5B',
+					darkgreen: '#2D4438',
+					black: '#121212',
+					darkgray: '#1C1C1C',
+					gray: '#333333',
+					lightgray: '#AAAAAA',
+					white: '#E0E0E0',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +95,32 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'blink': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0' }
+				},
+				'typing': {
+					from: { width: '0' },
+					to: { width: '100%' }
+				},
+				'circuit-flow': {
+					'0%': { backgroundPosition: '0% 0%' },
+					'100%': { backgroundPosition: '100% 100%' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'blink': 'blink 1s step-end infinite',
+				'typing': 'typing 3.5s steps(40, end)',
+				'circuit-flow': 'circuit-flow 5s linear infinite'
+			},
+			fontFamily: {
+				'mono': ['Space Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+			},
+			backgroundImage: {
+				'circuit-pattern': "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMC41Ij48cGF0aCBkPSJNMTAgMEwxMCA0ME0yMCAwTDIwIDQwTTMwIDEwTDEwIDMwTTMwIDIwTDIwIDMwTTMwIDMwTDMwIDEwIi8+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMiIvPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjIiLz48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIi8+PC9nPjwvc3ZnPg==')",
 			}
 		}
 	},
