@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
 
 const Projects: React.FC = () => {
-  const categories = ['All', 'Web', 'Apps', 'Tools'];
+  const categories = ['All', 'Web', 'Apps', 'Media'];
   const [activeCategory, setActiveCategory] = useState('All');
   
   const projects = [
