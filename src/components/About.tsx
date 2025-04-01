@@ -72,6 +72,7 @@ const About: React.FC = () => {
             <div className="mt-8 text-center text-hacker-lightgray">
               <p className="mb-2">Our mission is to create technology that empowers users while maintaining the highest standards of security, performance, and design.</p>
               <p>We believe in open source collaboration, knowledge sharing, and continuous innovation.</p>
+              <p>We operate on a privacy first workflow and strive to protect privacy and anonymity online for all internet users.</p>
             </div>
           </div>
         </div>
@@ -92,7 +93,7 @@ const About: React.FC = () => {
             </p>
             
             <p className="text-hacker-lightgray">
-              At N1ghtw1re Studios, the future of the web belongs to those who dare to build it.
+              The future of the web belongs to those who dare to build it.
             </p>
           </div>
         </div>

@@ -4,7 +4,7 @@ import Terminal from './Terminal';
 
 const Hero: React.FC = () => {
   const terminalLines = [
-    "Initializing N1ghtw1re Collective...",
+    "Initializing N1ghtw1re Studios...",
     "Loading skill modules...",
     "Connecting to digital ecosystem...",
     "Welcome to N1ghtw1re Studios",
