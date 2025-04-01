@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 interface ProjectCardProps {
   title: string;
@@ -21,20 +22,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <div className="project-card bg-hacker-darkgray border border-hacker-gray/30 rounded-sm overflow-hidden">
-      <div className="relative aspect-video bg-gradient-to-br from-hacker-black to-hacker-darkgray flex items-center justify-center overflow-hidden">
-        {image ? (
-          <img 
-            src={image} 
-            alt={title} 
-            className="object-cover w-full h-full opacity-70 hover:opacity-100 transition-opacity duration-300" 
-          />
-        ) : (
-          <div className="text-5xl text-hacker-green opacity-30">{`{ }`}</div>
-        )}
-        <div className="absolute top-2 right-2 bg-hacker-green/90 px-2 py-0.5 text-xs text-hacker-black font-bold">
-          {category}
+      <AspectRatio ratio={16/9} className="relative">
+        <div className="w-full h-full bg-gradient-to-br from-hacker-black to-hacker-darkgray flex items-center justify-center overflow-hidden">
+          {image ? (
+            <img 
+              src={image} 
+              alt={title} 
+              className="object-cover w-full h-full opacity-70 hover:opacity-100 transition-opacity duration-300" 
+            />
+          ) : (
+            <div className="text-5xl text-hacker-green opacity-30">{`{ }`}</div>
+          )}
+          <div className="absolute top-2 right-2 bg-hacker-green/90 px-2 py-0.5 text-xs text-hacker-black font-bold">
+            {category}
+          </div>
         </div>
-      </div>
+      </AspectRatio>
       
       <div className="p-4">
         <h3 className="text-lg font-bold text-hacker-green mb-2">{title}</h3>

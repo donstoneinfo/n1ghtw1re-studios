@@ -9,9 +9,9 @@ const Projects: React.FC = () => {
   const projects = [
     {
       title: "Interlinked Records",
-      description: "Undeground Independent Record Label Based in Siem Reap, Cambodia.",
+      description: "Underground Independent Record Label Based in Siem Reap, Cambodia.",
       category: "Web",
-      image: "https://source.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+      image: "/lovable-uploads/80a60fb6-5b18-4fa6-8ace-b9386efdb0df.png",
       link: "https://interlinked-records.lovable.app/",
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
@@ -27,7 +27,7 @@ const Projects: React.FC = () => {
       title: "TheDonStone",
       description: "Professional Touring DJ website with a retro-terminal design",
       category: "Web",
-      image: "https://source.unsplash.com/photo-1518770660439-4636190af475",
+      image: "/lovable-uploads/2e86ad0b-9e1e-4f25-8d8b-2b1fbfa0bfff.png",
       link: "https://thedonstone.lovable.app/",
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
