@@ -13,13 +13,15 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-hacker-black text-hacker-white font-mono">
+    <div className="min-h-screen bg-hacker-black text-hacker-white font-mono relative">
       <Header />
       <Hero />
-      <Projects />
-      <About />
-      <Contact />
-      <Footer />
+      <div className="relative z-10 bg-hacker-black">
+        <Projects />
+        <About />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 };

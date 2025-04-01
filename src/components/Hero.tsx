@@ -14,13 +14,29 @@ const Hero: React.FC = () => {
 
   return (
     <section className="min-h-screen flex items-center pt-16 relative overflow-hidden">
-      <div className="circuit-bg"></div>
-      <div className="container mx-auto px-4">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="border border-hacker-green/30 w-full h-full">
+          <video 
+            className="w-full h-full object-cover opacity-30 filter brightness-50 contrast-125" 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+          >
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-city-at-night-12757-large.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      
+      <div className="circuit-bg z-10 opacity-40"></div>
+      <div className="container mx-auto px-4 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-hacker-green mb-4">
               <span className="block typing-animation">N1ghtw1re_</span>
-              <span className="block text-hacker-white text-2xl md:text-3xl mt-2">Collective</span>
+              <span className="block text-hacker-white text-2xl md:text-3xl mt-2">Studios</span>
             </h1>
             <p className="text-hacker-lightgray max-w-md">
             N1ghtw1re is a digital studio specializing in creative, privacy-focused, websites, applications, and media projects with a retro design and aesthetic. Our goal is to reclaim the internet from algorithms and return the net to the individual. 
