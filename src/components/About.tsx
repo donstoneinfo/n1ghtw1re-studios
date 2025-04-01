@@ -6,13 +6,13 @@ import { Code, Database, Cpu, Server } from 'lucide-react';
 const About: React.FC = () => {
   const terminalLines = [
     "cat about.txt",
-    "N1ghtw1re Collective is a group of passionate developers,",
-    "designers, and technology enthusiasts dedicated to",
-    "creating cutting-edge digital solutions and tools.",
+    "N1ghtw1re is a digital studio specializing in creative,",
+    "privacy-focused, websites, applications, and media projects",
+    "with a retro design and aesthetic.",
     "",
-    "Since 20XX, we've been pushing the boundaries of what's",
-    "possible in web development, software engineering, and",
-    "digital security."
+    "Our goal is to reclaim the internet from algorithms",
+    "and return the power of the internet",
+    "to the individual."
   ];
 
   const specialties = [
