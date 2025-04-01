@@ -31,19 +31,20 @@ const Projects: React.FC = () => {
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
-      title: "Data Vault",
-      description: "Secure cloud storage solution with military-grade encryption and decentralized architecture.",
-      category: "Tools",
-      link: "#",
-      technologies: ["AWS", "Blockchain", "Encryption"]
+      title: "Alpha Ascension Blog",
+      description: "Satirical take on alpha-male inlfuencer and guru marketing schemes.",
+      category: "Media",
+      image: "/lovable-uploads/alpha-ascension.jpg",
+      link: "https://alpha-ascension.lovable.app/",
+      technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
-      title: "Terminal OS",
-      description: "Web-based terminal emulator with enhanced productivity commands and cloud synchronization.",
-      category: "Web",
-      image: "https://source.unsplash.com/photo-1461749280684-dccba630e2f6",
-      link: "#",
-      technologies: ["JavaScript", "WebAssembly", "IndexedDB"]
+      title: "Elonopia",
+      description: "Satirical take down of the Cult of Elon Musk and the current oligarchy in the United States.",
+      category: "Media",
+      image: "/lovable-uploads/elonopia.jpg",
+      link: "https://elonopia.lovable.app/",
+      technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
       title: "Network Scanner",
