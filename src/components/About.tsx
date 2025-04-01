@@ -75,6 +75,27 @@ const About: React.FC = () => {
             </div>
           </div>
         </div>
+        
+        {/* Mission Statement Section */}
+        <div className="mt-20">
+          <h3 className="text-2xl font-bold text-hacker-green mb-6 text-center">
+            <span className="text-hacker-white">&lt;/</span> Mission Statement <span className="text-hacker-white">&gt;</span>
+          </h3>
+          
+          <div className="bg-hacker-darkgray border border-hacker-gray/30 p-6 rounded-sm max-w-4xl mx-auto">
+            <p className="text-hacker-lightgray mb-4">
+              At N1ghtw1re Studios, we build the internet as it was meant to be—open, user-driven, and free from corporate interference. We craft websites, media, applications, and tools that empower individuals and communities to reclaim their digital space. No oppressive algorithms. No manipulative engagement tactics. Just the raw potential of the internet, designed in your image.
+            </p>
+            
+            <p className="text-hacker-lightgray mb-4">
+              We collaborate with visionaries, creators, and organizations who share our belief that the internet should serve people—not the other way around. Whether you're looking for a site that defies conventional design, a platform that respects privacy, or a digital experience that puts control back in your hands, we're here to make it happen.
+            </p>
+            
+            <p className="text-hacker-lightgray">
+              At N1ghtw1re Studios, the future of the web belongs to those who dare to build it.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
