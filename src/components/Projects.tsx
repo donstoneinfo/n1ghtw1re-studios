@@ -19,7 +19,7 @@ const Projects: React.FC = () => {
       title: "N1ghtw1re",
       description: "A Retro-Themed Hacker Enthusiast Collective ARG Website and E-Zine.",
       category: "Web",
-      image: "https://source.unsplash.com/photo-1526374965328-7f61d4dc18c5",
+      image: "/lovable-uploads/8ae249ed-cc9b-49a8-be92-b2f26b60a6dc.png",
       link: "https://n1ghtw1re.neocities.org/",
       technologies: ["HTML", "CSS", "JavaScript"]
     },
