@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-6 pt-6 border-t border-hacker-gray/30 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-hacker-lightgray mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} N1ghtw1re Collective. All rights reserved.
+            &copy; {new Date().getFullYear()} N1ghtw1re Studios. All rights reserved.
           </p>
           <p className="text-xs text-hacker-gray">
             <span className="text-hacker-green">$</span> Designed and developed with precision
