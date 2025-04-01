@@ -8,19 +8,19 @@ const Projects: React.FC = () => {
   
   const projects = [
     {
-      title: "Crypto Dashboard",
-      description: "Real-time cryptocurrency tracking application with market analytics and portfolio management.",
-      category: "Web",
+      title: "Interlinked Records",
+      description: "Undeground Independent Record Label Based in Siem Reap, Cambodia.",
+      category: "Website",
       image: "https://source.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-      link: "#",
+      link: "https://interlinked-records.lovable.app/",
       technologies: ["React", "Node.js", "TailwindCSS", "WebSockets"]
     },
     {
-      title: "Code Guardian",
-      description: "A security-focused code analysis tool that identifies vulnerabilities in source code.",
+      title: "N1ghtw1re",
+      description: "A Retro-Themed Hacker Enthusiast Collective ARG Website and E-Zine.",
       category: "Tools",
       image: "https://source.unsplash.com/photo-1526374965328-7f61d4dc18c5",
-      link: "#",
+      link: "https://n1ghtw1re.neocities.org/",
       technologies: ["Python", "Machine Learning", "Docker"]
     },
     {

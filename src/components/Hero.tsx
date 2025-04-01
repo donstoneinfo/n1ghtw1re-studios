@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
               <span className="block text-hacker-white text-2xl md:text-3xl mt-2">Collective</span>
             </h1>
             <p className="text-hacker-lightgray max-w-md">
-            N1ghtw1re is a digital studio specializing in creative, privacy-focused, websites, applications, and media projects with a retro design and aesthetic. Our goal is to reclaim the internet from algorithms and return the power of the internet to the individual. 
+            N1ghtw1re is a digital studio specializing in creative, privacy-focused, websites, applications, and media projects with a retro design and aesthetic. Our goal is to reclaim the internet from algorithms and return the net to the individual. 
             </p>
             <div className="flex gap-4">
               <a 
