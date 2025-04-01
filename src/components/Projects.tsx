@@ -13,23 +13,23 @@ const Projects: React.FC = () => {
       category: "Website",
       image: "https://source.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
       link: "https://interlinked-records.lovable.app/",
-      technologies: ["React", "Node.js", "TailwindCSS", "WebSockets"]
+      technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
       title: "N1ghtw1re",
       description: "A Retro-Themed Hacker Enthusiast Collective ARG Website and E-Zine.",
-      category: "Tools",
+      category: "Website",
       image: "https://source.unsplash.com/photo-1526374965328-7f61d4dc18c5",
       link: "https://n1ghtw1re.neocities.org/",
-      technologies: ["Python", "Machine Learning", "Docker"]
+      technologies: ["HTML", "CSS", "JavaScript"]
     },
     {
-      title: "Circuit Designer",
-      description: "Interactive tool for designing and simulating electronic circuits with real-time feedback.",
-      category: "Apps",
+      title: "TheDonStone",
+      description: "Professional Touring DJ website with a retro-terminal design",
+      category: "Website",
       image: "https://source.unsplash.com/photo-1518770660439-4636190af475",
-      link: "#",
-      technologies: ["Electron", "Three.js", "TypeScript"]
+      link: "https://thedonstone.lovable.app/",
+      technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
       title: "Data Vault",
