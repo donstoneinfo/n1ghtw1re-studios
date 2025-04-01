@@ -47,11 +47,12 @@ const Projects: React.FC = () => {
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
-      title: "Network Scanner",
-      description: "Advanced network diagnostic tool for security professionals and system administrators.",
+      title: "Chronicles Of Siem Reap",
+      description: "Pre-Production: ARG-style travel app for wandering around Siem Reap, Cambodia",
       category: "Apps",
+      image: "/lovable-uploads/siemreap.jpg",
       link: "#",
-      technologies: ["Go", "React Native", "Network Protocols"]
+      technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     }
   ];
 
