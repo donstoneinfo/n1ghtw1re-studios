@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
               <div className="terminal-body space-y-4">
                 <div>
                   <p className="text-hacker-green">$ cat contact-info.txt</p>
-                  <p className="text-hacker-white mt-2">Email: contact@n1ghtw1re.com</p>
+                  <p className="text-hacker-white mt-2">Email: n1ghtw1re@proton.me</p>
                   <p className="text-hacker-white">Location: Cyberspace, Digital District</p>
                   <p className="text-hacker-white">Hours: 24/7 - We never sleep</p>
                 </div>
@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
             <div className="text-center">
               <p className="text-hacker-lightgray mb-4">Follow us on social media</p>
               <div className="flex justify-center gap-4">
-                {['GitHub', 'Twitter', 'LinkedIn'].map((platform) => (
+                {['GitHub', 'BlueSky', 'Mastodon', 'YouTube'].map((platform) => (
                   <a 
                     key={platform}
                     href="#" 
