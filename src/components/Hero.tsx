@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
             loop 
             playsInline
           >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-city-at-night-12757-large.mp4" type="video/mp4" />
+            <source src="https://www.youtube.com/watch?v=GPQhIrp1AJ4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
