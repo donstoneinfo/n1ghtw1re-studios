@@ -10,7 +10,7 @@ const Projects: React.FC = () => {
     {
       title: "Interlinked Records",
       description: "Undeground Independent Record Label Based in Siem Reap, Cambodia.",
-      category: "Website",
+      category: "Web",
       image: "https://source.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
       link: "https://interlinked-records.lovable.app/",
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
@@ -18,7 +18,7 @@ const Projects: React.FC = () => {
     {
       title: "N1ghtw1re",
       description: "A Retro-Themed Hacker Enthusiast Collective ARG Website and E-Zine.",
-      category: "Website",
+      category: "Web",
       image: "https://source.unsplash.com/photo-1526374965328-7f61d4dc18c5",
       link: "https://n1ghtw1re.neocities.org/",
       technologies: ["HTML", "CSS", "JavaScript"]
@@ -26,7 +26,7 @@ const Projects: React.FC = () => {
     {
       title: "TheDonStone",
       description: "Professional Touring DJ website with a retro-terminal design",
-      category: "Website",
+      category: "Web",
       image: "https://source.unsplash.com/photo-1518770660439-4636190af475",
       link: "https://thedonstone.lovable.app/",
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
