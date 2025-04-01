@@ -50,6 +50,7 @@ const Projects: React.FC = () => {
       title: "Chronicles of Siem Reap",
       description: "Pre-Production - Experience adventure as you solve puzzles around Siem Reap, Cambodia.",
       category: "Apps",
+      image: "/lovable-uploads/siemreap.jpg",
       link: "#",
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     }
