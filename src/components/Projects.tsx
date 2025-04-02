@@ -48,14 +48,6 @@ const Projects: React.FC = () => {
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
-      title: "Chronicles of Siem Reap",
-      description: "Pre-Production - Experience adventure as you solve puzzles around Siem Reap, Cambodia.",
-      category: "Apps",
-      image: "/lovable-uploads/siemreap.jpg",
-      link: "#",
-      technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
-    },
-    {
       title: "Command & Conquer: 30 Days to Linux Mastery",
       description: "Pre-Production: Learn Linux in 30 days with this unique educational app",
       category: "Apps",
@@ -70,6 +62,14 @@ const Projects: React.FC = () => {
       image: "/placeholder.svg",
       link: "#",
       technologies: ["Python", "React", "D3.js", "Electron"]
+    },
+    {
+      title: "Chronicles of Siem Reap",
+      description: "Pre-Production - Experience adventure as you solve puzzles around Siem Reap, Cambodia.",
+      category: "Apps",
+      image: "/lovable-uploads/siemreap.jpg",
+      link: "#",
+      technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
       title: "Internet Freedom Podcast",
