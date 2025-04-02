@@ -18,22 +18,22 @@ const About: React.FC = () => {
   const specialties = [
     {
       title: "Web Development",
-      description: "Creating responsive, performant, and secure web applications",
+      description: "Creating responsive, engaging, and secure web applications.",
       icon: <Code className="w-10 h-10 text-hacker-green" />
     },
     {
-      title: "System Architecture",
-      description: "Designing robust and scalable technology infrastructure",
+      title: "App Development",
+      description: "Designing apps that put the user in control of their data.",
       icon: <Server className="w-10 h-10 text-hacker-green" />
     },
     {
-      title: "Data Engineering",
-      description: "Building efficient data pipelines and storage solutions",
+      title: "Entertainment & Media",
+      description: "Developing media & entertainment solutions for your business.",
       icon: <Database className="w-10 h-10 text-hacker-green" />
     },
     {
-      title: "Security Tools",
-      description: "Developing specialized security analysis and testing tools",
+      title: "Privacy & Security",
+      description: "Developing privacy and anonymity first applications and tools.",
       icon: <Cpu className="w-10 h-10 text-hacker-green" />
     }
   ];
