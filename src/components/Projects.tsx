@@ -49,19 +49,19 @@ const Projects: React.FC = () => {
     },
     {
       title: "Command & Conquer: 30 Days to Linux Mastery",
-      description: "Pre-Production: Learn Linux in 30 days with this unique educational app",
+      description: "Coming Soon: Learn Linux in 30 days with this unique educational app",
       category: "Apps",
       image: "/lovable-uploads/commandconquer.jpg",
       link: "#",
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
-      title: "Data Privacy Monitor",
-      description: "Tool to help users understand what data is being collected about them online.",
+      title: "TB-303 Acid Bass Synth Clone",
+      description: "Pre-Production: Recreating the classic sounds of the Roland TB-303.",
       category: "Apps",
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/303.jpg",
       link: "#",
-      technologies: ["Python", "React", "D3.js", "Electron"]
+      technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
       title: "Chronicles of Siem Reap",
@@ -72,10 +72,10 @@ const Projects: React.FC = () => {
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
-      title: "Internet Freedom Podcast",
-      description: "Weekly audio show discussing online privacy, security, and digital rights.",
+      title: "Project 2028",
+      description: "A manifesto for the rest of us. A blueprint the defeating fascism in the current world.",
       category: "Media",
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/project2028.jpg",
       link: "#",
       technologies: ["Audio Production", "Web Distribution", "RSS"]
     }
