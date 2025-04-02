@@ -66,7 +66,7 @@ const Terminal: React.FC<TerminalProps> = ({
   }, [typing, lines]);
 
   return (
-    <div className={cn("terminal", className)}>
+    <div className={cn("terminal crt-text", className)}>
       <div className="terminal-header">
         <div className="terminal-dots">
           <div className="terminal-dot bg-red-500"></div>

@@ -36,6 +36,11 @@
     --ring: 142 15% 38%;
 
     --radius: 0.25rem;
+    
+    /* CRT effect properties */
+    --crt-color-green: #4A7A5B;
+    --crt-glow: 0 0 5px rgba(74, 122, 91, 0.7);
+    --crt-scanline-size: 2px;
   }
 }
 
@@ -46,6 +51,20 @@
 
   body {
     @apply bg-hacker-black text-hacker-white font-mono;
+    position: relative;
+  }
+
+  /* Add CRT background and effects to body */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(18, 18, 18, 0.8) 0%, rgba(0, 0, 0, 0.95) 100%);
+    z-index: -2;
+    pointer-events: none;
   }
 
   ::selection {
@@ -55,6 +74,22 @@
   /* Terminal styling */
   .terminal {
     @apply p-4 bg-hacker-darkgray border border-hacker-green rounded-md;
+    box-shadow: 0 0 15px rgba(74, 122, 91, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .terminal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, 
+      rgba(74, 122, 91, 0.05),
+      rgba(18, 18, 18, 0.02));
+    pointer-events: none;
   }
   
   .terminal-header {
@@ -71,6 +106,7 @@
   
   .terminal-body {
     @apply font-mono;
+    text-shadow: 0 0 5px rgba(74, 122, 91, 0.7);
   }
   
   .command-prompt {
@@ -84,6 +120,7 @@
   
   .cursor {
     @apply inline-block w-2 h-4 bg-hacker-green ml-1 animate-blink;
+    box-shadow: 0 0 8px rgba(74, 122, 91, 0.9);
   }
 
   /* Circuit board background */
@@ -96,6 +133,7 @@
   .typing-animation {
     @apply overflow-hidden whitespace-nowrap border-r-2 border-hacker-green;
     animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    text-shadow: 0 0 8px rgba(74, 122, 91, 0.7);
   }
 
   @keyframes typing {
@@ -115,5 +153,122 @@
 
   .project-card:hover {
     @apply shadow-[0_0_10px_2px] shadow-hacker-green/30;
+  }
+  
+  /* CRT effect styling */
+  .crt-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .crt-overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(rgba(18, 18, 18, 0), rgba(0, 0, 0, 0.1)),
+      repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+      );
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+  .crt-frame {
+    position: relative;
+    box-shadow: 0 0 15px rgba(74, 122, 91, 0.5);
+    overflow: hidden;
+  }
+  
+  .crt-content {
+    position: relative;
+  }
+  
+  .crt-scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 11;
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(0, 0, 0, 0.05) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    animation: scanline 10s linear infinite;
+  }
+  
+  @keyframes scanline {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 100%;
+    }
+  }
+  
+  .crt-text {
+    text-shadow: 0 0 5px rgba(74, 122, 91, 0.7);
+    position: relative;
+  }
+  
+  .crt-button {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(74, 122, 91, 0.4);
+    text-shadow: 0 0 4px rgba(74, 122, 91, 0.6);
+  }
+  
+  .crt-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transform: skewX(-25deg);
+    animation: crt-button-shine 3s infinite;
+  }
+  
+  @keyframes crt-button-shine {
+    0% {
+      left: -100%;
+    }
+    20% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  /* Screen flicker effect */
+  .crt-flicker {
+    animation: flicker 0.15s infinite alternate;
+  }
+  
+  @keyframes flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+      opacity: 1;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+      opacity: 0.8;
+    }
   }
 }
