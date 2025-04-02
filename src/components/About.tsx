@@ -70,8 +70,7 @@ const About: React.FC = () => {
           <div className="order-1 lg:order-2">
             <Terminal lines={terminalLines} className="max-w-lg mx-auto" />
             <div className="mt-8 text-center text-hacker-lightgray">
-              <p className="mb-2">Our mission is to create technology that empowers users while maintaining the highest standards of security, performance, and design.</p>
-              <p>We believe in open source collaboration, knowledge sharing, and continuous innovation.</p>
+              <p className="mb-2">We believe in open source collaboration, knowledge sharing, and continuous innovation.</p>
               <p>We operate on a privacy first workflow and strive to protect privacy and anonymity online for all internet users.</p>
             </div>
           </div>
