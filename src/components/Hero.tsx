@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
     "Connecting to digital ecosystem...",
     "Welcome to N1ghtw1re Studios",
     "We build privacy-first digital solutions",
-    "that put the users in control of their data."
+    "that put users in control of their data."
   ];
 
   return (
