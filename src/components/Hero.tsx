@@ -8,8 +8,8 @@ const Hero: React.FC = () => {
     "Loading skill modules...",
     "Connecting to digital ecosystem...",
     "Welcome to N1ghtw1re Studios",
-    "We build digital solutions for the modern world.",
-    "Type 'explore' to discover our projects."
+    "We build privacy-first digital solutions",
+    "that put the users in control of their data."
   ];
 
   return (
