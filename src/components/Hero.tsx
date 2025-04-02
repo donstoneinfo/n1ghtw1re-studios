@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <div className="border border-hacker-green/30 w-full h-full">
           <iframe 
-            className="w-full h-full object-cover opacity-60 filter brightness-50 contrast-125"
+            className="w-full h-full object-cover opacity-30 filter brightness-50 contrast-125"
             src="https://youtu.be/BGKzRc0yKRo?si=aXvUJkYp2wsV2gC1&t=7619"
             title="Background Video"
             allow="autoplay; encrypted-media"
