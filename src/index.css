@@ -356,8 +356,7 @@
     background: radial-gradient(
       circle at center,
       transparent 60%,
-      rgba(0, 128, 0, 0.05)
- 100%
+      rgba(12, 190, 6, 0.4) 100%
     );
     pointer-events: none;
     z-index: 5;
