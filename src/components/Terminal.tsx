@@ -66,27 +66,29 @@ const Terminal: React.FC<TerminalProps> = ({
   }, [typing, lines]);
 
   return (
-    <div className={cn("terminal crt-text", className)}>
-      <div className="terminal-header">
-        <div className="terminal-dots">
-          <div className="terminal-dot bg-red-500"></div>
-          <div className="terminal-dot bg-yellow-500"></div>
-          <div className="terminal-dot bg-green-500"></div>
+    <div className={cn("terminal bg-hacker-darkgray/90 border border-hacker-green/70 rounded-md p-4 shadow-[0_0_15px_rgba(74,122,91,0.5)] backdrop-blur-sm crt-screen", className)}>
+      <div className="terminal-header flex justify-between items-center mb-2">
+        <div className="terminal-dots flex gap-2">
+          <div className="terminal-dot w-3 h-3 rounded-full bg-red-500"></div>
+          <div className="terminal-dot w-3 h-3 rounded-full bg-yellow-500"></div>
+          <div className="terminal-dot w-3 h-3 rounded-full bg-green-500"></div>
         </div>
         <div className="text-xs text-hacker-lightgray">n1ghtw1re@terminal</div>
       </div>
-      <div className="terminal-body">
+      <div className="terminal-body font-mono text-hacker-green">
         {displayedLines.map((line, index) => (
-          <div key={index} className="command-prompt">
-            <span>{line}</span>
+          <div key={index} className="command-prompt flex items-center gap-2">
+            <span className="text-hacker-green font-bold">></span>
+            <span className="text-hacker-white crt-text">{line}</span>
             {typing && index === currentLineIndex && !isComplete && (
-              <span className="cursor"></span>
+              <span className="cursor inline-block w-2 h-4 bg-hacker-green ml-1 animate-blink"></span>
             )}
           </div>
         ))}
         {typing && isComplete && (
-          <div className="command-prompt">
-            <span className="cursor"></span>
+          <div className="command-prompt flex items-center gap-2">
+            <span className="text-hacker-green font-bold">></span>
+            <span className="cursor inline-block w-2 h-4 bg-hacker-green ml-1 animate-blink"></span>
           </div>
         )}
       </div>

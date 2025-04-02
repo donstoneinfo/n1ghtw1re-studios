@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-hacker-green mb-4 crt-text">
-              <span className="block typing-animation">N1ghtw1re_</span>
+              <span className="block">N1ghtw1re_</span>
               <span className="block text-hacker-white text-2xl md:text-3xl mt-2">Studios</span>
             </h1>
             <p className="text-hacker-lightgray max-w-md crt-text">
