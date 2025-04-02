@@ -78,7 +78,7 @@ const Terminal: React.FC<TerminalProps> = ({
       <div className="terminal-body font-mono text-hacker-green">
         {displayedLines.map((line, index) => (
           <div key={index} className="command-prompt flex items-center gap-2">
-            <span className="text-hacker-green font-bold">></span>
+            <span className="text-hacker-green font-bold">{`>`}</span>
             <span className="text-hacker-white crt-text">{line}</span>
             {typing && index === currentLineIndex && !isComplete && (
               <span className="cursor inline-block w-2 h-4 bg-hacker-green ml-1 animate-blink"></span>
@@ -87,7 +87,7 @@ const Terminal: React.FC<TerminalProps> = ({
         ))}
         {typing && isComplete && (
           <div className="command-prompt flex items-center gap-2">
-            <span className="text-hacker-green font-bold">></span>
+            <span className="text-hacker-green font-bold">{`>`}</span>
             <span className="cursor inline-block w-2 h-4 bg-hacker-green ml-1 animate-blink"></span>
           </div>
         )}
