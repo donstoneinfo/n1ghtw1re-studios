@@ -56,12 +56,12 @@ const Projects: React.FC = () => {
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
-      title: "Cyber Security Scanner",
-      description: "Web application for analyzing website security vulnerabilities.",
+      title: "Command & Conquer: 30 Days to Linux Mastery",
+      description: "Pre-Production: Learn Linux in 30 days with this unique educational app",
       category: "Apps",
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/commandconquer.jpg",
       link: "#",
-      technologies: ["Node.js", "Express", "React", "Tailwind CSS"]
+      technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
       title: "Data Privacy Monitor",
