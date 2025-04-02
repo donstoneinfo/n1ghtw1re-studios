@@ -1,55 +1,69 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { cn } from '@/lib/utils';
 
 interface TerminalProps {
   lines: string[];
   typing?: boolean;
   className?: string;
+  typingSpeed?: number;
 }
 
-const Terminal: React.FC<TerminalProps> = ({ lines, typing = true, className }) => {
+const Terminal: React.FC<TerminalProps> = ({ 
+  lines, 
+  typing = true, 
+  className,
+  typingSpeed = 30 // ms per character
+}) => {
   const [displayedLines, setDisplayedLines] = useState<string[]>([]);
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
+  const [isComplete, setIsComplete] = useState(false);
 
-  useEffect(() => {
-    if (!typing) {
-      setDisplayedLines(lines);
+  // Function to type out the lines character by character
+  const typeCharacter = useCallback(() => {
+    if (currentLineIndex >= lines.length) {
+      setIsComplete(true);
       return;
     }
-
-    if (currentLineIndex >= lines.length) return;
 
     const currentLine = lines[currentLineIndex];
     
     if (currentCharIndex < currentLine.length) {
-      const timer = setTimeout(() => {
-        setCurrentCharIndex(currentCharIndex + 1);
-      }, 30); // Adjust typing speed here
-      
-      return () => clearTimeout(timer);
-    } else {
-      // Line is complete, move to next line
+      // Update the current line with one more character
       const updatedLines = [...displayedLines];
-      updatedLines[currentLineIndex] = currentLine;
-      setDisplayedLines(updatedLines);
+      if (updatedLines.length <= currentLineIndex) {
+        updatedLines.push('');
+      }
+      updatedLines[currentLineIndex] = currentLine.substring(0, currentCharIndex + 1);
       
-      // Add a delay before starting the next line
-      const timer = setTimeout(() => {
+      setDisplayedLines(updatedLines);
+      setCurrentCharIndex(currentCharIndex + 1);
+    } else {
+      // Line is complete, add a delay before moving to the next line
+      setTimeout(() => {
         setCurrentLineIndex(currentLineIndex + 1);
         setCurrentCharIndex(0);
       }, 300); // Delay between lines
-      
-      return () => clearTimeout(timer);
     }
-  }, [currentLineIndex, currentCharIndex, displayedLines, lines, typing]);
+  }, [currentLineIndex, currentCharIndex, displayedLines, lines]);
 
-  // Display the current line as it's being typed
-  const displayLines = [...displayedLines];
-  if (currentLineIndex < lines.length) {
-    displayLines[currentLineIndex] = lines[currentLineIndex].substring(0, currentCharIndex);
-  }
+  useEffect(() => {
+    if (!typing || isComplete) return;
+
+    // Set up the interval to type characters
+    const interval = setInterval(typeCharacter, typingSpeed);
+    
+    return () => clearInterval(interval);
+  }, [typing, isComplete, typeCharacter, typingSpeed]);
+
+  // If not typing, just display all lines
+  useEffect(() => {
+    if (!typing) {
+      setDisplayedLines([...lines]);
+      setIsComplete(true);
+    }
+  }, [typing, lines]);
 
   return (
     <div className={cn("terminal", className)}>
@@ -62,12 +76,19 @@ const Terminal: React.FC<TerminalProps> = ({ lines, typing = true, className }) 
         <div className="text-xs text-hacker-lightgray">n1ghtw1re@terminal</div>
       </div>
       <div className="terminal-body">
-        {displayLines.map((line, index) => (
+        {displayedLines.map((line, index) => (
           <div key={index} className="command-prompt">
             <span>{line}</span>
-            {typing && index === currentLineIndex && <span className="cursor"></span>}
+            {typing && index === currentLineIndex && !isComplete && (
+              <span className="cursor"></span>
+            )}
           </div>
         ))}
+        {typing && isComplete && (
+          <div className="command-prompt">
+            <span className="cursor"></span>
+          </div>
+        )}
       </div>
     </div>
   );

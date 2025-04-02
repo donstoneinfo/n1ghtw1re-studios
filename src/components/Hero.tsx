@@ -17,16 +17,14 @@ const Hero: React.FC = () => {
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <div className="border border-hacker-green/30 w-full h-full">
-          <video 
-            className="w-full h-full object-cover opacity-30 filter brightness-50 contrast-125" 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-          >
-            <source src="https://www.youtube.com/watch?v=GPQhIrp1AJ4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <iframe 
+            className="w-full h-full object-cover opacity-30 filter brightness-50 contrast-125"
+            src="https://www.youtube.com/embed/GPQhIrp1AJ4?autoplay=1&loop=1&controls=0&mute=1&playlist=GPQhIrp1AJ4"
+            title="Background Video"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            frameBorder="0"
+          ></iframe>
         </div>
       </div>
       
