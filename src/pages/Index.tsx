@@ -14,11 +14,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-hacker-black text-hacker-white font-mono relative">
-      <div className="crt-scanlines"></div>
-      <div className="crt-grid"></div>
       <Header />
       <Hero />
-      <div className="relative z-10 bg-transparent">
+      <div className="relative z-10 bg-hacker-black">
         <Projects />
         <About />
         <Contact />

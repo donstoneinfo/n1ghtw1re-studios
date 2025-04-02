@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <div className="border border-hacker-green/50 w-full h-full crt-frame">
           <iframe 
-            className="w-full h-full object-cover opacity-40 filter brightness-90 contrast-125 crt-content"
+            className="w-full h-full object-cover opacity-50 filter brightness-90 contrast-125 crt-content"
             src="https://www.youtube.com/embed/GPQhIrp1AJ4?autoplay=1&loop=1&controls=0&mute=1&playlist=GPQhIrp1AJ4"
             title="Background Video"
             allow="autoplay; encrypted-media"
@@ -30,12 +30,12 @@ const Hero: React.FC = () => {
       
       <div className="crt-overlay"></div>
       <div className="crt-scanline"></div>
-      <div className="circuit-bg z-10 opacity-30"></div>
+      <div className="circuit-bg z-10 opacity-20"></div>
       
       <div className="container mx-auto px-4 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-hacker-green mb-4 crt-text glow-green">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-hacker-green mb-4 crt-text">
               <span className="block">N1ghtw1re</span>
               <span className="block text-hacker-white text-2xl md:text-3xl mt-2">Studios</span>
             </h1>
