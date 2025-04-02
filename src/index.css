@@ -39,7 +39,7 @@
     
     /* CRT effect properties */
     --crt-color-green: #4A7A5B;
-    --crt-glow: 0 0 5px rgba(74, 122, 91, 0.8);
+    --crt-glow: 0 0 10px rgba(74, 122, 91, 0.8);
     --crt-scanline-size: 2px;
   }
 }
@@ -63,7 +63,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle, rgba(18, 18, 18, 0.8) 0%, rgba(0, 0, 0, 0.95) 100%);
+    background: 
+      radial-gradient(circle, rgba(18, 18, 18, 0.8) 0%, rgba(0, 0, 0, 0.95) 100%),
+      repeating-linear-gradient(
+        transparent 0px,
+        rgba(74, 122, 91, 0.05) 1px,
+        transparent 2px
+      );
+    background-size: 100% 100%, 100% 4px;
     z-index: -2;
     pointer-events: none;
   }
@@ -85,7 +92,7 @@
   }
 
   .project-card:hover {
-    @apply shadow-[0_0_10px_2px] shadow-hacker-green/30;
+    @apply shadow-[0_0_15px_5px] shadow-hacker-green/40;
   }
   
   /* CRT effect styling */
@@ -102,7 +109,7 @@
     right: 0;
     bottom: 0;
     background: 
-      linear-gradient(rgba(18, 18, 18, 0), rgba(0, 0, 0, 0.1)),
+      linear-gradient(rgba(18, 18, 18, 0), rgba(0, 0, 0, 0.15)),
       repeating-linear-gradient(
         0deg,
         rgba(0, 0, 0, 0.15),
@@ -112,11 +119,12 @@
       );
     pointer-events: none;
     z-index: 10;
+    animation: scanline 10s linear infinite;
   }
   
   .crt-frame {
     position: relative;
-    box-shadow: 0 0 15px rgba(74, 122, 91, 0.5);
+    box-shadow: 0 0 20px rgba(74, 122, 91, 0.7);
     overflow: hidden;
   }
   
@@ -134,11 +142,11 @@
     background: linear-gradient(
       to bottom,
       transparent 50%,
-      rgba(0, 0, 0, 0.05) 50%
+      rgba(0, 0, 0, 0.1) 50%
     );
     background-size: 100% 4px;
     pointer-events: none;
-    animation: scanline 10s linear infinite;
+    animation: scanline 8s linear infinite;
   }
   
   @keyframes scanline {
@@ -151,15 +159,15 @@
   }
   
   .crt-text {
-    text-shadow: 0 0 5px rgba(74, 122, 91, 0.8);
+    text-shadow: 0 0 8px rgba(74, 122, 91, 0.8);
     position: relative;
   }
   
   .crt-button {
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 8px rgba(74, 122, 91, 0.4);
-    text-shadow: 0 0 4px rgba(74, 122, 91, 0.6);
+    box-shadow: 0 0 10px rgba(74, 122, 91, 0.6);
+    text-shadow: 0 0 6px rgba(74, 122, 91, 0.8);
   }
   
   .crt-button::before {
@@ -172,7 +180,7 @@
     background: linear-gradient(
       to right,
       transparent,
-      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.2),
       transparent
     );
     transform: skewX(-25deg);
@@ -210,6 +218,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 8px;
+    box-shadow: 0 0 15px rgba(74, 122, 91, 0.6);
   }
 
   .crt-screen::before {
@@ -222,8 +231,8 @@
     background: 
       radial-gradient(
         ellipse at center,
-        rgba(74, 122, 91, 0.05) 0%,
-        rgba(0, 0, 0, 0.2) 90%
+        rgba(74, 122, 91, 0.1) 0%,
+        rgba(0, 0, 0, 0.3) 90%
       );
     pointer-events: none;
     z-index: 2;
@@ -238,8 +247,8 @@
     bottom: 0;
     background: repeating-linear-gradient(
       0deg,
-      rgba(0, 0, 0, 0.15),
-      rgba(0, 0, 0, 0.15) 1px,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2) 1px,
       transparent 1px,
       transparent 2px
     );
@@ -261,8 +270,8 @@
     right: 0;
     bottom: 0;
     background: linear-gradient(to bottom, 
-      rgba(74, 122, 91, 0.05),
-      rgba(18, 18, 18, 0.02));
+      rgba(74, 122, 91, 0.1),
+      rgba(18, 18, 18, 0.05));
     pointer-events: none;
     z-index: 1;
   }
@@ -275,11 +284,11 @@
   .terminal-body {
     position: relative;
     z-index: 2;
-    text-shadow: 0 0 5px rgba(74, 122, 91, 0.7);
+    text-shadow: 0 0 8px rgba(74, 122, 91, 0.8);
   }
   
   .cursor {
-    box-shadow: 0 0 8px rgba(74, 122, 91, 0.9);
+    box-shadow: 0 0 10px rgba(74, 122, 91, 0.9);
   }
 
   .command-prompt {
@@ -290,5 +299,22 @@
   .typing-animation {
     @apply overflow-hidden whitespace-nowrap;
     text-shadow: 0 0 8px rgba(74, 122, 91, 0.7);
+  }
+  
+  /* Enhanced CRT vignette effect */
+  .crt-vignette::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      circle at center,
+      transparent 60%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+    pointer-events: none;
+    z-index: 5;
   }
 }

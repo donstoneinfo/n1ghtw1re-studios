@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
     },
     {
       title: "Alpha Ascension Blog",
-      description: "Satirical take on alpha-male inlfuencer and guru marketing schemes.",
+      description: "Satirical take on alpha-male influencer and guru marketing schemes.",
       category: "Media",
       image: "/lovable-uploads/alpha-ascension.jpg",
       link: "https://alpha-ascension.lovable.app/",
@@ -54,6 +54,30 @@ const Projects: React.FC = () => {
       image: "/lovable-uploads/siemreap.jpg",
       link: "#",
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
+    },
+    {
+      title: "Cyber Security Scanner",
+      description: "Web application for analyzing website security vulnerabilities.",
+      category: "Apps",
+      image: "/placeholder.svg",
+      link: "#",
+      technologies: ["Node.js", "Express", "React", "Tailwind CSS"]
+    },
+    {
+      title: "Data Privacy Monitor",
+      description: "Tool to help users understand what data is being collected about them online.",
+      category: "Apps",
+      image: "/placeholder.svg",
+      link: "#",
+      technologies: ["Python", "React", "D3.js", "Electron"]
+    },
+    {
+      title: "Internet Freedom Podcast",
+      description: "Weekly audio show discussing online privacy, security, and digital rights.",
+      category: "Media",
+      image: "/placeholder.svg",
+      link: "#",
+      technologies: ["Audio Production", "Web Distribution", "RSS"]
     }
   ];
 
@@ -62,10 +86,10 @@ const Projects: React.FC = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-20 relative crt-vignette">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-hacker-green mb-2">
+          <h2 className="text-3xl font-bold text-hacker-green mb-2 crt-text">
             <span className="text-hacker-white">[</span> Projects <span className="text-hacker-white">]</span>
           </h2>
           <p className="text-hacker-lightgray max-w-lg mx-auto">

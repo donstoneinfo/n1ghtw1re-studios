@@ -66,7 +66,7 @@ const Terminal: React.FC<TerminalProps> = ({
   }, [typing, lines]);
 
   return (
-    <div className={cn("terminal bg-hacker-darkgray/90 border border-hacker-green/70 rounded-md p-4 shadow-[0_0_15px_rgba(74,122,91,0.5)] backdrop-blur-sm crt-screen", className)}>
+    <div className={cn("terminal bg-hacker-darkgray/90 border border-hacker-green/70 rounded-md p-4 shadow-[0_0_20px_rgba(74,122,91,0.7)] backdrop-blur-sm crt-screen", className)}>
       <div className="terminal-header flex justify-between items-center mb-2">
         <div className="terminal-dots flex gap-2">
           <div className="terminal-dot w-3 h-3 rounded-full bg-red-500"></div>
