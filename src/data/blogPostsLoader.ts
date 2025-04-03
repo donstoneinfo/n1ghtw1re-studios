@@ -21,7 +21,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     ...manifestoPost,
-    tags: ['Manifesto', 'Digital Freedom', 'Web3']
+    tags: ['Manifesto', 'Digital Freedom']
   },
   {
     ...algorithmPost, 
@@ -29,11 +29,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     ...beigewebPost,
-    tags: ['Design', 'Web History', 'UX']
+    tags: ['Design', 'UX']
   },
   {
     ...geocitiesPost,
-    tags: ['Nostalgia', 'Web History', 'Community']
+    tags: ['Nostalgia', 'Design', 'Community']
   }
   // Add more posts here as you create them
 ];
