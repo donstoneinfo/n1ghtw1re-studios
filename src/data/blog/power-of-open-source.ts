@@ -1,6 +1,6 @@
 
 export const post = {
-    id: 7,
+    id: 8,
     title: "Why Free Online Services Aren't Really Free",
     slug: "power-of-open-source",
     date: "2025-03-05",
