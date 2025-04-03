@@ -3,6 +3,7 @@ import { post as manifestoPost } from './blog/our-manifesto-building-the-interne
 import { post as algorithmPost } from './blog/algorithms-arent-your-friends';
 import { post as beigewebPost } from './blog/the-beige-web';
 import { post as geocitiesPost } from './blog/geocities-and-angelfire';
+import { post as digitalFootprintPost } from './blog/digital-footprints';
 
 export interface BlogPost {
   id: number;
@@ -34,6 +35,10 @@ export const blogPosts: BlogPost[] = [
   {
     ...geocitiesPost,
     tags: ['Nostalgia', 'Design', 'Community']
+  }
+  {
+    ...digitalFootprintPost,
+    tags: ['Privacy', 'Security']
   }
   // Add more posts here as you create them
 ];
