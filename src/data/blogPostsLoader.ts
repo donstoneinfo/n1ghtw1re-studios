@@ -5,6 +5,7 @@ import { post as beigewebPost } from './blog/the-beige-web';
 import { post as geocitiesPost } from './blog/geocities-and-angelfire';
 import { post as digitalFootprintPost } from './blog/digital-footprints';
 import { post as cookieBannerPost } from './blog/beyond-the-cookie-banner';
+import { post as freeOnlinePost } from './blog/why-free-online-services';
 
 export interface BlogPost {
   id: number;
@@ -44,6 +45,10 @@ export const blogPosts: BlogPost[] = [
   {
     ...cookieBannerPost,
     tags: ['Privacy', 'Security']
+  },
+  {
+    ...freeOnlinePost,
+    tags: ['Privacy', 'Data', 'Surveillance']
   }
   // Add more posts here as you create them
 ];

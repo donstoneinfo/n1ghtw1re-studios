@@ -5,7 +5,7 @@ export const post = {
   slug: "beige-web",
   date: "2023-10-10",
   author: "N1ghtw1re Collective",
-  excerpt: "TEscape the beige. We build digital experiences that defy the ordinary, where design is rebellion, not repetition.",
+  excerpt: "Escape the beige. We build digital experiences that defy the ordinary, where design is rebellion, not repetition.",
   content: `## The Beige Web: Escape Boring Web Desgin
 
 Scroll. Click. Land on a page. Hero image, three neat boxes below, sanitized icons, maybe a gradient button urging you towards… something. Scroll again. Another site. Different logo, same bones. Same clean lines. Same predictable flow. Same… beige.
