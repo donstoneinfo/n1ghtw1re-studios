@@ -51,7 +51,7 @@ const BlogPostPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="mb-8">
-              <div className="flex justify-start mb-6">
+              <div className="flex justify-start mb-12">
                 <Button 
                   variant="outline" 
                   size="sm" 
@@ -68,7 +68,7 @@ const BlogPostPage = () => {
               <p className="text-sm text-hacker-lightgray">By {post.author}</p>
             </div>
             
-            <div className="prose prose-invert prose-green max-w-none">
+            <div className="prose prose-invert prose-green max-w-none [&>p]:mb-6">
               <ReactMarkdown>{post.content}</ReactMarkdown>
             </div>
             
