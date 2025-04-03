@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { blogPosts } from '@/data/blogPosts';
+import { getBlogPostBySlug, getSortedBlogPosts } from '@/data/blogPostsLoader';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -11,13 +11,11 @@ import ReactMarkdown from 'react-markdown';
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const [post, setPost] = useState(blogPosts.find(post => post.slug === slug));
+  const [post, setPost] = useState(getBlogPostBySlug(slug || ''));
   
   // Get sorted posts for navigation
   const sortedPosts = useMemo(() => {
-    return [...blogPosts].sort((a, b) => 
-      new Date(b.date).getTime() - new Date(a.date).getTime()
-    );
+    return getSortedBlogPosts();
   }, []);
   
   // Find current post index in the sorted array
@@ -53,15 +51,17 @@ const BlogPostPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="mb-8">
-              <Button 
-                variant="outline" 
-                size="sm" 
-                className="mb-6 border-hacker-gray text-hacker-lightgray hover:text-hacker-green"
-                onClick={() => navigate('/blog')}
-              >
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to all posts
-              </Button>
+              <div className="flex justify-start mb-6">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="border-hacker-gray text-hacker-lightgray hover:text-hacker-green"
+                  onClick={() => navigate('/blog')}
+                >
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  Back to all posts
+                </Button>
+              </div>
               
               <time className="text-sm text-hacker-green/70">{post.date}</time>
               <h1 className="text-3xl md:text-4xl font-bold text-hacker-green mt-2 mb-3">{post.title}</h1>

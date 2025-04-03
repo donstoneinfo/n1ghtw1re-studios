@@ -1,15 +1,13 @@
 
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { blogPosts } from '@/data/blogPosts';
+import { getSortedBlogPosts } from '@/data/blogPostsLoader';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const BlogPage = () => {
   const navigate = useNavigate();
-  const sortedPosts = [...blogPosts].sort((a, b) => 
-    new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  const sortedPosts = getSortedBlogPosts();
 
   useEffect(() => {
     document.title = "Blog | N1ghtw1re Studios";

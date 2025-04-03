@@ -1,23 +1,12 @@
 
-export interface BlogPost {
-  id: number;
-  title: string;
-  slug: string;
-  date: string;
-  author: string;
-  excerpt: string;
-  content: string;
-}
-
-export const blogPosts: BlogPost[] = [
-  {
-    id: 1,
-    title: "Our Manifesto: Building the Internet We Were Promised",
-    slug: "our-manifesto-building-the-internet-we-were-promised",
-    date: "2023-12-15",
-    author: "N1ghtw1re Collective",
-    excerpt: "They sold you a dream, didn't they? A digital frontier. Open spaces, free exchange, knowledge unbound. Remember that? A flicker, perhaps. Before the walls went up.",
-    content: `## Our Manifesto: Building the Internet We Were Promised
+export const post = {
+  id: 1,
+  title: "Our Manifesto: Building the Internet We Were Promised",
+  slug: "our-manifesto-building-the-internet-we-were-promised",
+  date: "2023-12-15",
+  author: "N1ghtw1re Collective",
+  excerpt: "They sold you a dream, didn't they? A digital frontier. Open spaces, free exchange, knowledge unbound. Remember that? A flicker, perhaps. Before the walls went up.",
+  content: `## Our Manifesto: Building the Internet We Were Promised
 
 They sold you a dream, didn't they? A digital frontier. Open spaces, free exchange, knowledge unbound. Remember that? A flicker, perhaps. Before the walls went up. Before the gardens were walled off, paved over, and plastered with billboards that watch you back.
 
@@ -44,41 +33,4 @@ We're laying it now. One line of code, one design choice, one collaboration at a
 Building the internet as it was meant to be.
 
 **(End Transmission)**`
-  },
-  {
-    id: 2,
-    title: "The Digital Panopticon: Breaking Free",
-    slug: "the-digital-panopticon-breaking-free",
-    date: "2023-11-28",
-    author: "Agent Zero",
-    excerpt: "Every click you make, every search you take, they're watching you. The architecture of the modern internet has evolved into a perfect surveillance machine.",
-    content: `## The Digital Panopticon: Breaking Free
-
-Every click you make, every search you take, they're watching you. The architecture of the modern internet has evolved into a perfect surveillance machine. But does it have to be this way?
-
-In this post, we explore the mechanisms of digital surveillance and how we can regain control through technical countermeasures and mindful digital consumption. From decentralized networks to privacy-oriented browsers, we outline practical steps for digital liberation.
-
-The panopticon can be dismantled, one privacy shield at a time. Join us as we explore how to reclaim your digital sovereignty in an age of ubiquitous surveillance.
-
-Remember: Privacy isn't just a preference. It's a fundamental right in the digital age.`
-  },
-  {
-    id: 3,
-    title: "Retro Computing: More Than Nostalgia",
-    slug: "retro-computing-more-than-nostalgia",
-    date: "2023-10-10",
-    author: "Pixel Prophet",
-    excerpt: "The blinking cursor on a monochrome screen. The satisfying clack of mechanical keyboards. There's a reason we're drawn to retro computing aesthetics.",
-    content: `## Retro Computing: More Than Nostalgia
-
-The blinking cursor on a monochrome screen. The satisfying clack of mechanical keyboards. There's a reason we're drawn to retro computing aesthetics beyond mere nostalgia.
-
-In this exploration, we analyze how retro computing interfaces often embodied core principles that modern interfaces have abandoned: clear feedback, reduced distractions, and a focus on functionality over flashiness.
-
-We'll examine how these principles can be applied to modern digital design to create experiences that respect user agency and promote deeper engagement rather than shallow addiction.
-
-From the command line to brutalist web design, there's a growing counter-movement that recognizes the power of these approaches - not just as aesthetic choices, but as ethical ones.
-
-Embracing the old might be our most revolutionary path forward.`
-  }
-];
+};

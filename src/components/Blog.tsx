@@ -2,13 +2,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { blogPosts } from '@/data/blogPosts';
+import { getSortedBlogPosts } from '@/data/blogPostsLoader';
 
 const Blog: React.FC = () => {
   // Get the 3 most recent posts
-  const recentPosts = [...blogPosts].sort((a, b) => 
-    new Date(b.date).getTime() - new Date(a.date).getTime()
-  ).slice(0, 3);
+  const recentPosts = getSortedBlogPosts().slice(0, 3);
   
   const navigate = useNavigate();
   
