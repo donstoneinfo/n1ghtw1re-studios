@@ -8,7 +8,7 @@ export const post = {
     excerpt: "We exchange our privacy, our autonomy, and our time for access to convenient tools and social connections. But is it worth it?",
     content: `## Are those apps really free?
   
-    "Free." It's a powerful word. It lures us in, promising access to tools, platforms, and connections without any financial cost. But on the internet, the old adage rings true: if you're not paying for the product, you _are_ the product.
+"Free." It's a powerful word. It lures us in, promising access to tools, platforms, and connections without any financial cost. But on the internet, the old adage rings true: if you're not paying for the product, you _are_ the product.
 
 The "free" online services we use every day – social media platforms, search engines, email providers – operate on a business model where _you_ are the commodity. Your data, your attention, your behavior – these are the currencies that fuel their empires.
 
