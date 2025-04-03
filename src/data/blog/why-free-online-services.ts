@@ -15,12 +15,14 @@ The "free" online services we use every day – social media platforms, search e
 Here's how it works:
 
 - **The "Product is You" Model:** These companies collect vast amounts of data about you.1 Every like, every search, every post, every click is recorded, analyzed, and added to your digital profile. This profile is incredibly valuable.
+
 - **Data Harvesting:** They harvest your data through various means:
     - **Tracking Cookies:** As discussed before, these track your activity across websites.2
     - **Usage Data:** They monitor how you use their services, what you click on, how long you spend on each page.
     - **Location Data:** They often track your location, providing insights into your movements and habits.3
     - **Personal Information:** Information you willingly provide, like your name, age, and interests, is also collected.
-- **Targeted Advertising:** The primary way these companies monetize your data is through targeted advertising. Advertisers pay to show you ads based on your profile, your interests, and your behavior.4 The more detailed your profile, the more valuable it is to advertisers.
+
+    - **Targeted Advertising:** The primary way these companies monetize your data is through targeted advertising. Advertisers pay to show you ads based on your profile, your interests, and your behavior.4 The more detailed your profile, the more valuable it is to advertisers.
 
 So, what's the real cost of using these "free" services?
 
