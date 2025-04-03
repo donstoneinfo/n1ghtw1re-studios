@@ -1,7 +1,7 @@
 
 import { post as manifestoPost } from './blog/our-manifesto-building-the-internet-we-were-promised';
-import { post as panopticonPost } from './blog/the-digital-panopticon-breaking-free';
-import { post as retroComputingPost } from './blog/retro-computing-more-than-nostalgia';
+import { post as algorithmPost } from './blog/algorithms-arent-your-friends';
+import { post as beigewebPost } from './blog/the-beige-web';
 
 export interface BlogPost {
   id: number;
@@ -18,8 +18,8 @@ export interface BlogPost {
 // or a CMS API call to fetch blog posts
 export const blogPosts: BlogPost[] = [
   manifestoPost,
-  panopticonPost,
-  retroComputingPost,
+  algorithmPost,
+  beigewebPost,
   // Add more posts here as you create them
 ];
 
