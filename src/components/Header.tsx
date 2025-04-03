@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -73,9 +72,6 @@ const Header: React.FC = () => {
           <NavLink to="/#about" onClick={() => handleLinkClick('/#about')}>About</NavLink>
           <NavLink to="/blog" onClick={() => handleLinkClick('/blog')}>Blog</NavLink>
           <NavLink to="/#contact" onClick={() => handleLinkClick('/#contact')}>Contact</NavLink>
-          <Button variant="outline" size="sm" className="ml-2 text-hacker-green border-hacker-green hover:bg-hacker-green/10">
-            Connect
-          </Button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -96,9 +92,6 @@ const Header: React.FC = () => {
             <MobileNavLink to="/#about" onClick={() => handleLinkClick('/#about')}>About</MobileNavLink>
             <MobileNavLink to="/blog" onClick={() => handleLinkClick('/blog')}>Blog</MobileNavLink>
             <MobileNavLink to="/#contact" onClick={() => handleLinkClick('/#contact')}>Contact</MobileNavLink>
-            <Button variant="outline" size="sm" className="w-full justify-center text-hacker-green border-hacker-green hover:bg-hacker-green/10">
-              Connect
-            </Button>
           </div>
         </div>
       )}

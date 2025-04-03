@@ -1,17 +1,38 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { blogPosts } from '@/data/blogPosts';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [post, setPost] = useState(blogPosts.find(post => post.slug === slug));
+  
+  // Get sorted posts for navigation
+  const sortedPosts = useMemo(() => {
+    return [...blogPosts].sort((a, b) => 
+      new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+  }, []);
+  
+  // Find current post index in the sorted array
+  const currentIndex = useMemo(() => {
+    return sortedPosts.findIndex(p => p.slug === slug);
+  }, [sortedPosts, slug]);
+  
+  // Get next and previous posts
+  const nextPost = useMemo(() => {
+    return currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
+  }, [currentIndex, sortedPosts]);
+  
+  const prevPost = useMemo(() => {
+    return currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
+  }, [currentIndex, sortedPosts]);
 
   useEffect(() => {
     if (!post) {
@@ -49,6 +70,33 @@ const BlogPostPage = () => {
             
             <div className="prose prose-invert prose-green max-w-none">
               <ReactMarkdown>{post.content}</ReactMarkdown>
+            </div>
+            
+            {/* Post Navigation */}
+            <div className="mt-12 pt-6 border-t border-hacker-gray/30 flex justify-between">
+              {prevPost ? (
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="border-hacker-gray text-hacker-lightgray hover:text-hacker-green"
+                  onClick={() => navigate(`/blog/${prevPost.slug}`)}
+                >
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  Previous: {prevPost.title.length > 30 ? `${prevPost.title.substring(0, 30)}...` : prevPost.title}
+                </Button>
+              ) : <div></div>}
+              
+              {nextPost ? (
+                <Button 
+                  variant="outline"
+                  size="sm" 
+                  className="border-hacker-gray text-hacker-lightgray hover:text-hacker-green"
+                  onClick={() => navigate(`/blog/${nextPost.slug}`)}
+                >
+                  Next: {nextPost.title.length > 30 ? `${nextPost.title.substring(0, 30)}...` : nextPost.title}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              ) : <div></div>}
             </div>
           </div>
         </div>

@@ -1,17 +1,30 @@
 
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Terminal } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   
   const handleNavigation = (path: string) => {
     if (path.startsWith('#')) {
-      // Handle scroll to section
-      const element = document.getElementById(path.substring(1));
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      // We need to navigate to the home page first if we're not there
+      if (location.pathname !== '/') {
+        navigate('/');
+        // Wait for navigation to complete before scrolling
+        setTimeout(() => {
+          const element = document.getElementById(path.substring(1));
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        // Already on home page, just scroll
+        const element = document.getElementById(path.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     } else {
       // Handle page navigation
@@ -39,8 +52,8 @@ const Footer: React.FC = () => {
                 { label: 'About', path: '#about' },
                 { label: 'Blog', path: '/blog' },
                 { label: 'Contact', path: '#contact' },
-                { label: 'Privacy', path: '#privacy' },
-                { label: 'Terms', path: '#terms' }
+                { label: 'Privacy', path: '/privacy' },
+                { label: 'Terms', path: '/terms' }
               ].map((item) => (
                 <button 
                   key={item.label} 
