@@ -35,7 +35,7 @@ export const blogPosts: BlogPost[] = [
   {
     ...geocitiesPost,
     tags: ['Nostalgia', 'Design', 'Community']
-  }
+  },
   {
     ...digitalFootprintPost,
     tags: ['Privacy', 'Security']
