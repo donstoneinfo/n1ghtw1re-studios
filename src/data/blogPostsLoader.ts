@@ -12,16 +12,29 @@ export interface BlogPost {
   author: string;
   excerpt: string;
   content: string;
+  tags?: string[];  // Adding tags property
 }
 
 // This is where all blog posts are imported
 // In a production environment, this could be replaced with a dynamic import system
 // or a CMS API call to fetch blog posts
 export const blogPosts: BlogPost[] = [
-  manifestoPost,
-  algorithmPost,
-  beigewebPost,
-  geocitiesPost
+  {
+    ...manifestoPost,
+    tags: ['Manifesto', 'Digital Freedom', 'Web3']
+  },
+  {
+    ...algorithmPost, 
+    tags: ['AI', 'Privacy', 'Ethics']
+  },
+  {
+    ...beigewebPost,
+    tags: ['Design', 'Web History', 'UX']
+  },
+  {
+    ...geocitiesPost,
+    tags: ['Nostalgia', 'Web History', 'Community']
+  }
   // Add more posts here as you create them
 ];
 

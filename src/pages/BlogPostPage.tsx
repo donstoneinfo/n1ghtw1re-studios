@@ -5,7 +5,7 @@ import { getBlogPostBySlug, getSortedBlogPosts } from '@/data/blogPostsLoader';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Tag } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 const BlogPostPage = () => {
@@ -66,9 +66,23 @@ const BlogPostPage = () => {
               <time className="text-sm text-hacker-green/70">{post.date}</time>
               <h1 className="text-3xl md:text-4xl font-bold text-hacker-green mt-2 mb-3">{post.title}</h1>
               <p className="text-sm text-hacker-lightgray">By {post.author}</p>
+              
+              {post.tags && post.tags.length > 0 && (
+                <div className="flex gap-2 mt-4">
+                  {post.tags.map((tag, index) => (
+                    <span 
+                      key={index} 
+                      className="inline-flex items-center bg-hacker-darkgray border border-hacker-green/30 px-2 py-1 text-xs text-hacker-green rounded"
+                    >
+                      <Tag className="w-3 h-3 mr-1" />
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
             
-            <div className="prose prose-invert prose-green max-w-none [&>p]:mb-6">
+            <div className="prose prose-invert prose-green max-w-none space-y-6">
               <ReactMarkdown>{post.content}</ReactMarkdown>
             </div>
             

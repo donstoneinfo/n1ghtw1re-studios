@@ -3,6 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { getSortedBlogPosts } from '@/data/blogPostsLoader';
+import { Tag as TagIcon } from 'lucide-react';
 
 const Blog: React.FC = () => {
   // Get the 3 most recent posts
@@ -30,6 +31,21 @@ const Blog: React.FC = () => {
               
               <time className="text-xs text-hacker-green/70 mb-2 block">{post.date}</time>
               <h3 className="text-xl font-bold text-hacker-green mb-3">{post.title}</h3>
+              
+              {post.tags && post.tags.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {post.tags.slice(0, 3).map((tag, index) => (
+                    <span 
+                      key={index} 
+                      className="inline-flex items-center bg-hacker-darkgray border border-hacker-green/30 px-2 py-0.5 text-xs text-hacker-green rounded"
+                    >
+                      <TagIcon className="w-2.5 h-2.5 mr-1" />
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+              
               <p className="text-hacker-lightgray mb-4 line-clamp-3">
                 {post.excerpt}
               </p>

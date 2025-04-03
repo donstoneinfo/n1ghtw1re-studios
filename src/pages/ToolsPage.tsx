@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ExternalLink } from 'lucide-react';
@@ -80,9 +80,14 @@ const toolCategories: ToolCategory[] = [
     ]
   },
   {
-    title: "Deployment & Documentation",
-    description: "Our tools for version control, deployment, and knowledge management.",
+    title: "Backend & Storage",
+    description: "Our tools for building robust backend services and managing data.",
     tools: [
+      {
+        name: "Supabase",
+        description: "Open source Firebase alternative with authentication, database, and storage capabilities.",
+        url: "https://supabase.com"
+      },
       {
         name: "GitHub",
         description: "Code hosting platform for version control and collaboration.",
