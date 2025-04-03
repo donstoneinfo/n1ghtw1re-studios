@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { blogPosts } from '@/data/blogPosts';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -36,12 +36,10 @@ const BlogPostPage = () => {
                 variant="outline" 
                 size="sm" 
                 className="mb-6 border-hacker-gray text-hacker-lightgray hover:text-hacker-green"
-                asChild
+                onClick={() => navigate('/blog')}
               >
-                <Link to="/blog">
-                  <ArrowLeft className="mr-2 h-4 w-4" />
-                  Back to all posts
-                </Link>
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to all posts
               </Button>
               
               <time className="text-sm text-hacker-green/70">{post.date}</time>

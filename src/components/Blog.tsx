@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { blogPosts } from '@/data/blogPosts';
 
@@ -9,6 +9,8 @@ const Blog: React.FC = () => {
   const recentPosts = [...blogPosts].sort((a, b) => 
     new Date(b.date).getTime() - new Date(a.date).getTime()
   ).slice(0, 3);
+  
+  const navigate = useNavigate();
   
   return (
     <section id="blog" className="py-20 relative crt-vignette">
@@ -33,19 +35,23 @@ const Blog: React.FC = () => {
               <p className="text-hacker-lightgray mb-4 line-clamp-3">
                 {post.excerpt}
               </p>
-              <Link 
-                to={`/blog/${post.slug}`} 
+              <button 
+                onClick={() => navigate(`/blog/${post.slug}`)}
                 className="inline-flex items-center text-sm text-hacker-green hover:text-hacker-white transition-colors"
               >
                 Read More <span className="ml-1 text-xs">›</span>
-              </Link>
+              </button>
             </article>
           ))}
         </div>
         
         <div className="flex justify-center">
-          <Button asChild variant="outline" className="border-hacker-green text-hacker-green hover:bg-hacker-green/10 hover:text-hacker-white">
-            <Link to="/blog">View All Posts</Link>
+          <Button 
+            variant="outline" 
+            className="border-hacker-green text-hacker-green hover:bg-hacker-green/10 hover:text-hacker-white"
+            onClick={() => navigate('/blog')}
+          >
+            View All Posts
           </Button>
         </div>
       </div>

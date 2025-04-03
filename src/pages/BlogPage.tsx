@@ -1,10 +1,12 @@
 
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { blogPosts } from '@/data/blogPosts';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const BlogPage = () => {
+  const navigate = useNavigate();
   const sortedPosts = [...blogPosts].sort((a, b) => 
     new Date(b.date).getTime() - new Date(a.date).getTime()
   );
@@ -34,21 +36,24 @@ const BlogPage = () => {
                 <div className="mb-4">
                   <time className="text-sm text-hacker-green/70">{post.date}</time>
                   <h2 className="text-2xl font-bold text-hacker-green mt-2">
-                    <a href={`/blog/${post.slug}`} className="hover:text-hacker-white transition-colors">
+                    <button 
+                      onClick={() => navigate(`/blog/${post.slug}`)}
+                      className="hover:text-hacker-white transition-colors text-left"
+                    >
                       {post.title}
-                    </a>
+                    </button>
                   </h2>
                   <p className="text-sm text-hacker-lightgray mt-1">By {post.author}</p>
                 </div>
                 <p className="text-hacker-lightgray mb-4">
                   {post.excerpt}
                 </p>
-                <a 
-                  href={`/blog/${post.slug}`}
+                <button 
+                  onClick={() => navigate(`/blog/${post.slug}`)}
                   className="inline-flex items-center text-sm text-hacker-green hover:text-hacker-white transition-colors"
                 >
                   Read Full Post <span className="ml-1 text-xs">›</span>
-                </a>
+                </button>
               </article>
             ))}
           </div>
