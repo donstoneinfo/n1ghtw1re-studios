@@ -2,6 +2,7 @@
 import { post as manifestoPost } from './blog/our-manifesto-building-the-internet-we-were-promised';
 import { post as algorithmPost } from './blog/algorithms-arent-your-friends';
 import { post as beigewebPost } from './blog/the-beige-web';
+import { post as geocitiesPost } from './blog/geocities-and-angelfire';
 
 export interface BlogPost {
   id: number;
@@ -20,6 +21,7 @@ export const blogPosts: BlogPost[] = [
   manifestoPost,
   algorithmPost,
   beigewebPost,
+  geocitiesPost
   // Add more posts here as you create them
 ];
 
