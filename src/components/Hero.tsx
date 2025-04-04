@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
         <div className="border border-hacker-green/50 w-full h-full crt-frame">
           <iframe 
             className="w-full h-full object-cover opacity-50 filter brightness-90 contrast-125 crt-content"
-            src="https://www.youtube.com/embed/GPQhIrp1AJ4?autoplay=1&loop=1&controls=0&mute=1&playlist=GPQhIrp1AJ4&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3"
+            src="https://www.youtube.com/embed/GPQhIrp1AJ4?autoplay=1&loop=1&controls=0&mute=1&playlist=GPQhIrp1AJ4&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&disablekb=1"
             title="Background Video"
             allow="autoplay; encrypted-media"
             allowFullScreen
