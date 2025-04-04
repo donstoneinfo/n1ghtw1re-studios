@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Terminal, Patreon, Coffee } from 'lucide-react';
+import { Terminal, Heart, Coffee } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -109,7 +109,7 @@ const Contact: React.FC = () => {
                   href="#" 
                   className="inline-flex items-center gap-2 px-4 py-2 border border-hacker-green text-hacker-green hover:bg-hacker-green/10 hover:text-hacker-white transition-colors"
                 >
-                  <Patreon className="w-5 h-5" />
+                  <Heart className="w-5 h-5" />
                   Patreon
                 </a>
                 <a 
