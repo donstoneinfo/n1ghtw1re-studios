@@ -10,6 +10,7 @@ import { post as powerOpensourcePost } from './blog/power-of-open-source';
 import { post as pixelsPassionPost } from './blog/pixels-and-passion';
 import { post as ownContentPost } from './blog/owning-your-own-content';
 import { post as decodePatternsPost } from './blog/decoding-dark-patterns';
+import { post as indiewebMovementPost } from './blog/indieweb-movement';
 
 export interface BlogPost {
   id: number;
@@ -69,6 +70,10 @@ export const blogPosts: BlogPost[] = [
   {
     ...decodePatternsPost,
     tags: ['Design', 'UX', 'Psychology']
+  },
+  {
+    ...indiewebMovementPost,
+    tags: ['Ownership', 'Community', 'Collaboration']
   }
   // Add more posts here as you create them
 ];
