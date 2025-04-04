@@ -9,6 +9,7 @@ import { post as freeOnlinePost } from './blog/why-free-online-services';
 import { post as powerOpensourcePost } from './blog/power-of-open-source';
 import { post as pixelsPassionPost } from './blog/pixels-and-passion';
 import { post as ownContentPost } from './blog/owning-your-own-content';
+import { post as decodePatternsPost } from './blog/decoding-dark-patterns';
 
 export interface BlogPost {
   id: number;
@@ -64,6 +65,10 @@ export const blogPosts: BlogPost[] = [
   {
     ...ownContentPost,
     tags: ['Ownership', 'Privacy']
+  },
+  {
+    ...decodePatternsPost,
+    tags: ['Design', 'UX', 'Psychology']
   }
   // Add more posts here as you create them
 ];
