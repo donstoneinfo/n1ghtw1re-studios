@@ -1,0 +1,94 @@
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>N1ghtw1re Studios Blog</title>
+  <link>https://n1ghtw1re.com/blog</link>
+  <description>Thoughts, manifestos, and digital philosophy from the collective.</description>
+  <language>en-us</language>
+  <atom:link href="https://n1ghtw1re.com/rss.xml" rel="self" type="application/rss+xml" />
+  
+  <item>
+    <title>Our Manifesto: Building the Internet We Were Promised</title>
+    <link>https://n1ghtw1re.com/blog/our-manifesto-building-the-internet-we-were-promised</link>
+    <guid>https://n1ghtw1re.com/blog/our-manifesto-building-the-internet-we-were-promised</guid>
+    <pubDate>Tue, 15 Mar 2023 00:00:00 GMT</pubDate>
+    <description>The internet was supposed to be a place of freedom, innovation, and community. Instead, it's become a walled garden of surveillance, manipulation, and monopoly power. It's time to take it back.</description>
+    <category>Manifesto</category>
+    <category>Digital Freedom</category>
+  </item>
+  
+  <item>
+    <title>Algorithms Aren't Your Friends</title>
+    <link>https://n1ghtw1re.com/blog/algorithms-arent-your-friends</link>
+    <guid>https://n1ghtw1re.com/blog/algorithms-arent-your-friends</guid>
+    <pubDate>Thu, 22 Apr 2023 00:00:00 GMT</pubDate>
+    <description>How recommendation engines are designed to addict rather than enrich, and what we can do about it.</description>
+    <category>AI</category>
+    <category>Privacy</category>
+    <category>Ethics</category>
+  </item>
+  
+  <item>
+    <title>The Beige Web</title>
+    <link>https://n1ghtw1re.com/blog/the-beige-web</link>
+    <guid>https://n1ghtw1re.com/blog/the-beige-web</guid>
+    <pubDate>Mon, 10 Jun 2023 00:00:00 GMT</pubDate>
+    <description>How design homogenization is making the internet a boring place, and why we should embrace the weird again.</description>
+    <category>Design</category>
+    <category>UX</category>
+  </item>
+  
+  <item>
+    <title>GeoCities and Angelfire: A Digital Archaelogy</title>
+    <link>https://n1ghtw1re.com/blog/geocities-and-angelfire</link>
+    <guid>https://n1ghtw1re.com/blog/geocities-and-angelfire</guid>
+    <pubDate>Wed, 05 Jul 2023 00:00:00 GMT</pubDate>
+    <description>Exploring the ruins of the early web and what we can learn from its creative chaos.</description>
+    <category>Nostalgia</category>
+    <category>Design</category>
+    <category>Community</category>
+  </item>
+  
+  <item>
+    <title>Digital Footprints: What You Leave Behind</title>
+    <link>https://n1ghtw1re.com/blog/digital-footprints</link>
+    <guid>https://n1ghtw1re.com/blog/digital-footprints</guid>
+    <pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate>
+    <description>Understanding and controlling the trace of data we generate with every click, swipe and scroll.</description>
+    <category>Privacy</category>
+    <category>Security</category>
+  </item>
+  
+  <item>
+    <title>Beyond the Cookie Banner</title>
+    <link>https://n1ghtw1re.com/blog/beyond-the-cookie-banner</link>
+    <guid>https://n1ghtw1re.com/blog/beyond-the-cookie-banner</guid>
+    <pubDate>Mon, 18 Sep 2023 00:00:00 GMT</pubDate>
+    <description>How current privacy protections are mere theater, and what real privacy online could look like.</description>
+    <category>Privacy</category>
+    <category>Security</category>
+  </item>
+  
+  <item>
+    <title>Why "Free" Online Services Are Anything But</title>
+    <link>https://n1ghtw1re.com/blog/why-free-online-services</link>
+    <guid>https://n1ghtw1re.com/blog/why-free-online-services</guid>
+    <pubDate>Fri, 03 Nov 2023 00:00:00 GMT</pubDate>
+    <description>The hidden costs of surveillance capitalism and the data economy.</description>
+    <category>Privacy</category>
+    <category>Data</category>
+    <category>Surveillance</category>
+  </item>
+  
+  <item>
+    <title>The Power of Open Source</title>
+    <link>https://n1ghtw1re.com/blog/power-of-open-source</link>
+    <guid>https://n1ghtw1re.com/blog/power-of-open-source</guid>
+    <pubDate>Wed, 13 Dec 2023 00:00:00 GMT</pubDate>
+    <description>How collaborative development leads to more secure, innovative, and ethical software.</description>
+    <category>OpenSource</category>
+    <category>Collaboration</category>
+  </item>
+</channel>
+</rss>

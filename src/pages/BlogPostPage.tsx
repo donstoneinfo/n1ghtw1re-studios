@@ -63,7 +63,9 @@ const BlogPostPage = () => {
                 </Button>
                 
                 <a 
-                  href="#" 
+                  href="/rss.xml" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center text-hacker-green hover:text-hacker-white transition-colors"
                   title="Subscribe to RSS feed"
                 >

@@ -47,7 +47,9 @@ const BlogPage = () => {
                 <span className="text-hacker-white">[</span> The Archives <span className="text-hacker-white">]</span>
               </h1>
               <a 
-                href="#" 
+                href="/rss.xml" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center border border-hacker-green/40 text-hacker-green hover:bg-hacker-green/10 px-3 py-1.5 rounded transition-colors"
                 title="Subscribe to RSS feed"
               >

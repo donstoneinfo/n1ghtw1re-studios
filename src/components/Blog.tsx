@@ -23,7 +23,9 @@ const Blog: React.FC = () => {
           </p>
           <div className="mt-3 flex justify-center">
             <a 
-              href="#" 
+              href="/rss.xml" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center text-hacker-green hover:text-hacker-white transition-colors mr-4"
               title="Subscribe to RSS feed"
             >
