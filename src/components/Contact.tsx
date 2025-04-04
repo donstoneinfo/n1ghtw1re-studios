@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Terminal } from 'lucide-react';
+import { Terminal, Patreon, Coffee } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -101,18 +101,39 @@ const Contact: React.FC = () => {
               </div>
             </div>
             
-            <div className="text-center">
-              <p className="text-hacker-lightgray mb-4">Follow us on social media</p>
+            <div className="text-center space-y-4">
+              <p className="text-hacker-lightgray mb-2">Support our work</p>
+              
               <div className="flex justify-center gap-4">
-                {['GitHub', 'BlueSky', 'Mastodon', 'YouTube'].map((platform) => (
-                  <a 
-                    key={platform}
-                    href="#" 
-                    className="px-4 py-2 border border-hacker-gray/30 text-hacker-lightgray hover:border-hacker-green hover:text-hacker-green transition-colors"
-                  >
-                    {platform}
-                  </a>
-                ))}
+                <a 
+                  href="#" 
+                  className="inline-flex items-center gap-2 px-4 py-2 border border-hacker-green text-hacker-green hover:bg-hacker-green/10 hover:text-hacker-white transition-colors"
+                >
+                  <Patreon className="w-5 h-5" />
+                  Patreon
+                </a>
+                <a 
+                  href="#" 
+                  className="inline-flex items-center gap-2 px-4 py-2 border border-hacker-green text-hacker-green hover:bg-hacker-green/10 hover:text-hacker-white transition-colors"
+                >
+                  <Coffee className="w-5 h-5" />
+                  Buy Me a Coffee
+                </a>
+              </div>
+              
+              <div className="mt-6">
+                <p className="text-hacker-lightgray mb-4">Follow us on social media</p>
+                <div className="flex justify-center gap-4">
+                  {['GitHub', 'BlueSky', 'Mastodon', 'YouTube'].map((platform) => (
+                    <a 
+                      key={platform}
+                      href="#" 
+                      className="px-4 py-2 border border-hacker-gray/30 text-hacker-lightgray hover:border-hacker-green hover:text-hacker-green transition-colors"
+                    >
+                      {platform}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

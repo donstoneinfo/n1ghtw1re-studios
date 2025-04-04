@@ -5,7 +5,7 @@ import { getSortedBlogPosts } from '@/data/blogPostsLoader';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
-import { Tag } from 'lucide-react';
+import { Tag, Rss } from 'lucide-react';
 
 const BlogPage = () => {
   const navigate = useNavigate();
@@ -42,9 +42,19 @@ const BlogPage = () => {
       <div className="relative z-10 bg-hacker-black pt-24 pb-20">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <h1 className="text-4xl font-bold text-hacker-green mb-4">
-              <span className="text-hacker-white">[</span> The Archives <span className="text-hacker-white">]</span>
-            </h1>
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+              <h1 className="text-4xl font-bold text-hacker-green">
+                <span className="text-hacker-white">[</span> The Archives <span className="text-hacker-white">]</span>
+              </h1>
+              <a 
+                href="#" 
+                className="inline-flex items-center border border-hacker-green/40 text-hacker-green hover:bg-hacker-green/10 px-3 py-1.5 rounded transition-colors"
+                title="Subscribe to RSS feed"
+              >
+                <Rss className="w-4 h-4 mr-2" />
+                RSS Feed
+              </a>
+            </div>
             <p className="text-hacker-lightgray max-w-3xl">
               Explorations, manifestos, and digital philosophy from the collective. Unfiltered thoughts on technology, privacy, and the future of the internet.
             </p>

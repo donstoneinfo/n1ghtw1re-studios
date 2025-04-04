@@ -5,7 +5,7 @@ import { getBlogPostBySlug, getSortedBlogPosts } from '@/data/blogPostsLoader';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, ArrowRight, Tag } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Tag, Rss } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 const BlogPostPage = () => {
@@ -51,7 +51,7 @@ const BlogPostPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="mb-8">
-              <div className="flex justify-start mb-12">
+              <div className="flex justify-between items-center mb-12">
                 <Button 
                   variant="outline" 
                   size="sm" 
@@ -61,6 +61,15 @@ const BlogPostPage = () => {
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Back to all posts
                 </Button>
+                
+                <a 
+                  href="#" 
+                  className="inline-flex items-center text-hacker-green hover:text-hacker-white transition-colors"
+                  title="Subscribe to RSS feed"
+                >
+                  <Rss className="w-4 h-4 mr-1" />
+                  RSS Feed
+                </a>
               </div>
               
               <time className="text-sm text-hacker-green/70">{post.date}</time>

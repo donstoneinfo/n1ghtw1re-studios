@@ -3,7 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { getSortedBlogPosts } from '@/data/blogPostsLoader';
-import { Tag as TagIcon } from 'lucide-react';
+import { Tag as TagIcon, Rss } from 'lucide-react';
 
 const Blog: React.FC = () => {
   // Get the 3 most recent posts
@@ -21,6 +21,16 @@ const Blog: React.FC = () => {
           <p className="text-hacker-lightgray max-w-lg mx-auto">
             Thoughts, manifestos, and digital philosophy from the collective.
           </p>
+          <div className="mt-3 flex justify-center">
+            <a 
+              href="#" 
+              className="inline-flex items-center text-hacker-green hover:text-hacker-white transition-colors mr-4"
+              title="Subscribe to RSS feed"
+            >
+              <Rss className="w-4 h-4 mr-1" />
+              RSS Feed
+            </a>
+          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
