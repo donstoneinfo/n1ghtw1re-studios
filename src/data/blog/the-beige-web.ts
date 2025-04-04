@@ -3,7 +3,7 @@ export const post = {
   id: 3,
   title: "The Beige Web - Why Does Everything Online Look the Same",
   slug: "beige-web",
-  date: "2023-10-10",
+  date: "2024-10-10",
   author: "N1ghtw1re Collective",
   excerpt: "Escape the beige. We build digital experiences that defy the ordinary, where design is rebellion, not repetition.",
   content: `## The Beige Web: Escape Boring Web Desgin

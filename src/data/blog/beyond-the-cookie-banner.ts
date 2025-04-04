@@ -3,7 +3,7 @@ export const post = {
     id: 6,
     title: "Beyond the Cookie Banner - Understanding True Website Privacy",
     slug: "beyond-the-cookie-banners",
-    date: "2025-02-10",
+    date: "2023-12-10",
     author: "N1ghtw1re Collective",
     excerpt: "Cookies sound delicious, but are they really neccessary?",
     content: `## Do you really need to accept those cookies?

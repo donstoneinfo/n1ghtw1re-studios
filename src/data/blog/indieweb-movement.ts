@@ -3,7 +3,7 @@ export const post = {
     id: 12,
     title: "The IndieWeb Movement - Building a People-First Internet",
     slug: "indieweb-movement",
-    date: "2025-03-10",
+    date: "2024-06-10",
     author: "N1ghtw1re Collective",
     excerpt: "The core philosophy of the IndieWeb is simple: you own your content. You publish it on your own website, your own domain, and you syndicate it elsewhere, if you choose.",
     content: `## The IndieWeb Movement:

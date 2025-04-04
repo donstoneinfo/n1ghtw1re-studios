@@ -2,7 +2,7 @@ export const post = {
     id: 4,
     title: "Geocities and Angelfire - What We Lost When the Old Web Died and Can Neocities Revive it?",
     slug: "geocities-and-angelfire",
-    date: "2025-01-15",
+    date: "2024-03-15",
     author: "N1ghtw1re Collective",
     excerpt: "Remember the wild, untamed internet? We're reviving that spirit: reclaiming the web from algorithms and corporate control, one blinking GIF at a time.",
     content: `## Geocities and Angelfire

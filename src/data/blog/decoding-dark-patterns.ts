@@ -3,7 +3,7 @@ export const post = {
     id: 11,
     title: "Decoding Dark Patterns - How Websites Trick You (And How to Spot Them)",
     slug: "decoding-dark-patterns",
-    date: "2024-06-14",
+    date: "2024-01-14",
     author: "N1ghtw1re Collective",
     excerpt: "By understanding dark patterns, we can empower ourselves to make informed decisions and reclaim our autonomy in the digital world.",
     content: `## Decoding Dark Patterns:

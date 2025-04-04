@@ -3,7 +3,7 @@ export const post = {
   id: 1,
   title: "Our Manifesto: Building the Internet We Were Promised",
   slug: "our-manifesto-building-the-internet-we-were-promised",
-  date: "2023-12-15",
+  date: "2024-04-22",
   author: "N1ghtw1re Collective",
   excerpt: "They sold you a dream, didn't they? A digital frontier. Open spaces, free exchange, knowledge unbound. Remember that? A flicker, perhaps. Before the walls went up.",
   content: `## Our Manifesto: Building the Internet We Were Promised

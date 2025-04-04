@@ -3,7 +3,7 @@ export const post = {
     id: 10,
     title: "Owning Your Content - Why Your Own Website Matters More Than Ever",
     slug: "owning-your-own-content",
-    date: "2025-03-07",
+    date: "2024-05-07",
     author: "N1ghtw1re Collective",
     excerpt: "Your website is your foundation, your anchor in the ever-changing digital landscape.",
     content: `## Why Your Own Website Matters More Than Ever

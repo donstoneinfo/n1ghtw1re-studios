@@ -3,7 +3,7 @@ export const post = {
     id: 9,
     title: "Pixels & Passion - Why Retro Design Resonates in a Bland Digital Age",
     slug: "pixels-and-passion",
-    date: "2025-03-06",
+    date: "2024-08-06",
     author: "N1ghtw1re Collective",
     excerpt: "We use retro elements not just for their aesthetic appeal, but for their ability to communicate a sense of authenticity, of individuality, and of rebellion.",
     tags: ["Retro", "Design", "UX"],

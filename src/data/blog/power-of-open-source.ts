@@ -3,7 +3,7 @@ export const post = {
     id: 8,
     title: "The Power of Open Source",
     slug: "power-of-open-source",
-    date: "2025-03-05",
+    date: "2024-07-05",
     author: "N1ghtw1re Collective",
     excerpt: "It's not just about free software; it's about building a digital ecosystem that is open, accessible, and user-driven.",
     tags: ["OpenSource", "Freedom", "Collaboration"],

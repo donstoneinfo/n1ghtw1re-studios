@@ -3,7 +3,7 @@ export const post = {
     id: 5,
     title: "Digital Footprints - 5 Simple Steps to Enhance Your Online Privacy Today",
     slug: "digital-footprints",
-    date: "2025-02-01",
+    date: "2024-02-01",
     author: "N1ghtw1re Collective",
     excerpt: "Improve your online privacy with these 5 simple steps.",
     content: `## You're leaving Digital Footprints everywhere. 
