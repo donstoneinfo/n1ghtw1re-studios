@@ -7,6 +7,7 @@ import { post as digitalFootprintPost } from './blog/digital-footprints';
 import { post as cookieBannerPost } from './blog/beyond-the-cookie-banner';
 import { post as freeOnlinePost } from './blog/why-free-online-services';
 import { post as powerOpensourcePost } from './blog/power-of-open-source';
+import { post as pixelsPassionPost } from './blog/pixels-and-passion';
 
 export interface BlogPost {
   id: number;
@@ -54,6 +55,10 @@ export const blogPosts: BlogPost[] = [
   {
     ...powerOpensourcePost,
     tags: ['OpenSource', 'Collaboration']
+  },
+  {
+    ...pixelsPassionPost,
+    tags: ['Retro', 'Design', 'UX']
   }
   // Add more posts here as you create them
 ];
