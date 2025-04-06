@@ -11,6 +11,12 @@ const Blog: React.FC = () => {
   
   const navigate = useNavigate();
   
+  // Handle tag click
+  const handleTagClick = (tag: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    navigate(`/blog?tag=${encodeURIComponent(tag)}`);
+  };
+  
   return (
     <section id="blog" className="py-20 relative crt-vignette">
       <div className="container mx-auto px-4">
@@ -37,7 +43,7 @@ const Blog: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           {recentPosts.map((post, index) => (
-            <article key={index} className="border border-hacker-gray/30 bg-hacker-darkgray p-6 hover:border-hacker-green/50 transition-colors relative overflow-hidden group">
+            <article key={post.id} className="border border-hacker-gray/30 bg-hacker-darkgray p-6 hover:border-hacker-green/50 transition-colors relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-b from-hacker-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
               <div className="scanlines pointer-events-none absolute inset-0 opacity-5"></div>
               
@@ -46,14 +52,11 @@ const Blog: React.FC = () => {
               
               {post.tags && post.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-3">
-                  {post.tags.slice(0, 3).map((tag, index) => (
+                  {post.tags.slice(0, 3).map((tag, tagIndex) => (
                     <span 
-                      key={index} 
+                      key={`${post.id}-${tagIndex}`}
                       className="inline-flex items-center bg-hacker-darkgray border border-hacker-green/30 px-2 py-0.5 text-xs text-hacker-green rounded cursor-pointer"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        navigate(`/blog?tag=${tag}`);
-                      }}
+                      onClick={(e) => handleTagClick(tag, e)}
                     >
                       <TagIcon className="w-2.5 h-2.5 mr-1" />
                       {tag}
