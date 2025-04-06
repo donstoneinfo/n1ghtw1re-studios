@@ -39,7 +39,7 @@ const Blog: React.FC = () => {
           {recentPosts.map((post, index) => (
             <article key={index} className="border border-hacker-gray/30 bg-hacker-darkgray p-6 hover:border-hacker-green/50 transition-colors relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-b from-hacker-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-              <div className="scanlines pointer-events-none absolute inset-0 opacity-10"></div>
+              <div className="scanlines pointer-events-none absolute inset-0 opacity-5"></div>
               
               <time className="text-xs text-hacker-green/70 mb-2 block">{post.date}</time>
               <h3 className="text-xl font-bold text-hacker-green mb-3">{post.title}</h3>
@@ -49,7 +49,11 @@ const Blog: React.FC = () => {
                   {post.tags.slice(0, 3).map((tag, index) => (
                     <span 
                       key={index} 
-                      className="inline-flex items-center bg-hacker-darkgray border border-hacker-green/30 px-2 py-0.5 text-xs text-hacker-green rounded"
+                      className="inline-flex items-center bg-hacker-darkgray border border-hacker-green/30 px-2 py-0.5 text-xs text-hacker-green rounded cursor-pointer"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/blog?tag=${tag}`);
+                      }}
                     >
                       <TagIcon className="w-2.5 h-2.5 mr-1" />
                       {tag}

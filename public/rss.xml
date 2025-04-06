@@ -10,6 +10,28 @@
   <atom:link href="https://n1ghtw1re.com/rss.xml" rel="self" type="application/rss+xml" />
   
   <item>
+    <title>Pixels &amp; Passion - Why Retro Design Resonates in a Bland Digital Age</title>
+    <link>https://n1ghtw1re.com/blog/pixels-and-passion</link>
+    <guid>https://n1ghtw1re.com/blog/pixels-and-passion</guid>
+    <pubDate>Tue, 06 Aug 2024 00:00:00 GMT</pubDate>
+    <description>We use retro elements not just for their aesthetic appeal, but for their ability to communicate a sense of authenticity, of individuality, and of rebellion.</description>
+    <category>Retro</category>
+    <category>Design</category>
+    <category>UX</category>
+  </item>
+  
+  <item>
+    <title>The IndieWeb Movement - Building a People-First Internet</title>
+    <link>https://n1ghtw1re.com/blog/indieweb-movement</link>
+    <guid>https://n1ghtw1re.com/blog/indieweb-movement</guid>
+    <pubDate>Mon, 10 Jun 2024 00:00:00 GMT</pubDate>
+    <description>The core philosophy of the IndieWeb is simple: you own your content. You publish it on your own website, your own domain, and you syndicate it elsewhere, if you choose.</description>
+    <category>Ownership</category>
+    <category>Community</category>
+    <category>Collaboration</category>
+  </item>
+  
+  <item>
     <title>Our Manifesto: Building the Internet We Were Promised</title>
     <link>https://n1ghtw1re.com/blog/our-manifesto-building-the-internet-we-were-promised</link>
     <guid>https://n1ghtw1re.com/blog/our-manifesto-building-the-internet-we-were-promised</guid>

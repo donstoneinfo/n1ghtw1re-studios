@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { getSortedBlogPosts } from '@/data/blogPostsLoader';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,8 +9,17 @@ import { Tag, Rss } from 'lucide-react';
 
 const BlogPage = () => {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const sortedPosts = getSortedBlogPosts();
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  
+  useEffect(() => {
+    // Initialize selected tag from URL params if present
+    const tagParam = searchParams.get('tag');
+    if (tagParam) {
+      setSelectedTag(tagParam);
+    }
+  }, [searchParams]);
   
   // Extract all unique tags from the blog posts
   const allTags = React.useMemo(() => {
@@ -31,6 +40,18 @@ const BlogPage = () => {
     );
   }, [sortedPosts, selectedTag]);
 
+  // Handle tag selection
+  const handleTagSelect = (tag: string | null) => {
+    setSelectedTag(tag);
+    
+    // Update URL parameters
+    if (tag) {
+      setSearchParams({ tag });
+    } else {
+      setSearchParams({});
+    }
+  };
+
   useEffect(() => {
     document.title = "Blog | N1ghtw1re Studios";
     window.scrollTo(0, 0);
@@ -39,7 +60,7 @@ const BlogPage = () => {
   return (
     <div className="min-h-screen bg-hacker-black text-hacker-white font-mono relative">
       <Header />
-      <div className="relative z-10 bg-hacker-black pt-24 pb-20">
+      <div className="relative z-10 bg-hacker-black bg-opacity-90 pt-24 pb-20">
         <div className="container mx-auto px-4">
           <div className="mb-12">
             <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
@@ -71,7 +92,7 @@ const BlogPage = () => {
               <div className="flex flex-wrap gap-2">
                 <Badge 
                   className={`cursor-pointer ${selectedTag === null ? 'bg-hacker-green text-hacker-black' : 'bg-hacker-darkgray text-hacker-lightgray hover:bg-hacker-green/20 border-hacker-green/30'}`}
-                  onClick={() => setSelectedTag(null)}
+                  onClick={() => handleTagSelect(null)}
                 >
                   All
                 </Badge>
@@ -79,7 +100,7 @@ const BlogPage = () => {
                   <Badge 
                     key={idx}
                     className={`cursor-pointer ${selectedTag === tag ? 'bg-hacker-green text-hacker-black' : 'bg-hacker-darkgray text-hacker-lightgray hover:bg-hacker-green/20 border-hacker-green/30'}`}
-                    onClick={() => setSelectedTag(tag)}
+                    onClick={() => handleTagSelect(tag)}
                   >
                     {tag}
                   </Badge>
@@ -109,10 +130,10 @@ const BlogPage = () => {
                         {post.tags.map((tag, index) => (
                           <span 
                             key={index} 
-                            className="inline-flex items-center bg-hacker-darkgray border border-hacker-green/30 px-2 py-1 text-xs text-hacker-green rounded"
+                            className="inline-flex items-center bg-hacker-darkgray border border-hacker-green/30 px-2 py-1 text-xs text-hacker-green rounded cursor-pointer"
                             onClick={(e) => {
                               e.stopPropagation();
-                              setSelectedTag(tag);
+                              handleTagSelect(tag);
                             }}
                           >
                             <Tag className="w-3 h-3 mr-1" />
@@ -137,7 +158,7 @@ const BlogPage = () => {
               <div className="text-center py-10">
                 <p className="text-hacker-lightgray">No posts found with the selected tag.</p>
                 <button 
-                  onClick={() => setSelectedTag(null)}
+                  onClick={() => handleTagSelect(null)}
                   className="mt-4 text-hacker-green hover:text-hacker-white transition-colors"
                 >
                   View all posts

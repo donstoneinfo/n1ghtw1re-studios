@@ -48,10 +48,10 @@
       right: 0;
       bottom: 0;
       background: 
-        radial-gradient(circle, rgba(18, 18, 18, 0.8) 0%, rgba(0, 0, 0, 0.95) 100%),
+        radial-gradient(circle, rgba(25, 25, 25, 0.7) 0%, rgba(10, 10, 10, 0.85) 100%),
         repeating-linear-gradient(
           transparent 0px,
-          rgba(74, 122, 91, 0.05) 1px,
+          rgba(74, 122, 91, 0.03) 1px,
           transparent 2px
         );
       background-size: 100% 100%, 100% 4px;
@@ -70,12 +70,12 @@
       background: linear-gradient(
         to bottom,
         transparent 50%,
-        rgba(0, 0, 0, 0.1) 50%
+        rgba(0, 0, 0, 0.07) 50%
       );
       background-size: 100% 4px;
       pointer-events: none;
       z-index: 10;
-      opacity: 0.4;
+      opacity: 0.3;
     }
     
     .feed-container {
@@ -84,6 +84,7 @@
       margin-bottom: 2rem;
       position: relative;
       overflow: hidden;
+      background-color: rgba(28, 28, 28, 0.6);
     }
     
     .feed-container::before {
@@ -95,8 +96,8 @@
       bottom: 0;
       background: radial-gradient(
         circle at center,
-        transparent 60%,
-        rgba(0, 0, 0, 0.4) 100%
+        transparent 70%,
+        rgba(0, 0, 0, 0.3) 100%
       );
       pointer-events: none;
       z-index: 1;
@@ -180,6 +181,17 @@
       margin-bottom: 0.5rem;
       color: var(--hacker-green);
       text-shadow: var(--hacker-green-glow);
+    }
+    
+    .post-title-link {
+      color: var(--hacker-green);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .post-title-link:hover {
+      color: var(--link-hover-color);
+      text-decoration: none;
     }
     
     .post-date {

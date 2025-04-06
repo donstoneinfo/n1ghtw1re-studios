@@ -14,12 +14,12 @@ const Hero: React.FC = () => {
 
   return (
     <section className="min-h-screen flex items-center pt-16 relative overflow-hidden crt-container crt-vignette">
-      {/* Video Background */}
+      {/* Video Background with improved brightness */}
       <div className="absolute inset-0 z-0">
         <div className="border border-hacker-green/50 w-full h-full crt-frame">
           <iframe 
-            className="w-full h-full object-cover opacity-50 filter brightness-90 contrast-125 crt-content"
-            src="https://www.youtube.com/embed/GPQhIrp1AJ4?autoplay=1&loop=1&controls=0&mute=1&playlist=GPQhIrp1AJ4&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&disablekb=1"
+            className="w-full h-full object-cover opacity-65 filter brightness-110 contrast-110 crt-content"
+            src="https://www.youtube.com/embed/GPQhIrp1AJ4?autoplay=1&loop=1&controls=0&mute=1&playlist=GPQhIrp1AJ4&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&playsinline=1"
             title="Background Video"
             allow="autoplay; encrypted-media"
             allowFullScreen
@@ -28,9 +28,9 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
-      <div className="crt-overlay"></div>
-      <div className="crt-scanline"></div>
-      <div className="circuit-bg z-10 opacity-20"></div>
+      <div className="crt-overlay opacity-70"></div>
+      <div className="crt-scanline opacity-60"></div>
+      <div className="circuit-bg z-10 opacity-15"></div>
       
       <div className="container mx-auto px-4 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
