@@ -3,7 +3,7 @@ export const post = {
     id: 6,
     title: "Why Free Online Services Aren't Really Free",
     slug: "why-free-online-services",
-    date: "2023-11-03", // Make sure date format is consistent with other posts
+    date: "2023-11-03",
     author: "N1ghtw1re Collective",
     excerpt: "We exchange our privacy, our autonomy, and our time for access to convenient tools and social connections. But is it worth it?",
     content: `## Are those apps really free?

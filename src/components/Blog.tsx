@@ -1,42 +1,15 @@
 
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { getSortedBlogPosts } from '@/data/blogPostsLoader';
-import { Tag as TagIcon, Rss } from 'lucide-react';
 
 const Blog: React.FC = () => {
   // Get all posts, sort by date
   const allPosts = getSortedBlogPosts();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [filteredPosts, setFilteredPosts] = useState(allPosts.slice(0, 3));
+  const [filteredPosts] = useState(allPosts.slice(0, 3));
   
   const navigate = useNavigate();
-  
-  // Initialize tag from URL and update filtering when it changes
-  useEffect(() => {
-    const tagParam = searchParams.get('tag');
-    setSelectedTag(tagParam);
-    
-    // Apply filtering based on selected tag
-    if (tagParam) {
-      const filtered = allPosts.filter(post => 
-        post.tags && post.tags.includes(tagParam)
-      ).slice(0, 3);
-      setFilteredPosts(filtered);
-    } else {
-      // If no tag selected, show the 3 most recent posts
-      setFilteredPosts(allPosts.slice(0, 3));
-    }
-  }, [searchParams, allPosts]);
-  
-  // Handle tag click - update URL and let the effect handle filtering
-  const handleTagClick = (tag: string, e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setSearchParams({ tag });
-  };
   
   return (
     <section id="blog" className="py-20 relative crt-vignette">
@@ -48,67 +21,28 @@ const Blog: React.FC = () => {
           <p className="text-hacker-lightgray max-w-lg mx-auto">
             Thoughts, manifestos, and digital philosophy from the collective.
           </p>
-          <div className="mt-3 flex justify-center">
-            <a 
-              href="/rss.xml" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-hacker-green hover:text-hacker-white transition-colors mr-4"
-              title="Subscribe to RSS feed"
-            >
-              <Rss className="w-4 h-4 mr-1" />
-              RSS Feed
-            </a>
-          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          {filteredPosts.length > 0 ? (
-            filteredPosts.map((post) => (
-              <article key={post.id} className="border border-hacker-gray/30 bg-hacker-darkgray p-6 hover:border-hacker-green/50 transition-colors relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-b from-hacker-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-                <div className="scanlines pointer-events-none absolute inset-0 opacity-5"></div>
-                
-                <time className="text-xs text-hacker-green/70 mb-2 block">{post.date}</time>
-                <h3 className="text-xl font-bold text-hacker-green mb-3">{post.title}</h3>
-                
-                {post.tags && post.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {post.tags.slice(0, 3).map((tag) => (
-                      <span 
-                        key={`${post.id}-${tag}`}
-                        className="inline-flex items-center bg-hacker-darkgray border border-hacker-green/30 px-2 py-0.5 text-xs text-hacker-green rounded cursor-pointer"
-                        onClick={(e) => handleTagClick(tag, e)}
-                      >
-                        <TagIcon className="w-2.5 h-2.5 mr-1" />
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
-                
-                <p className="text-hacker-lightgray mb-4 line-clamp-3">
-                  {post.excerpt}
-                </p>
-                <button 
-                  onClick={() => navigate(`/blog/${post.slug}`)}
-                  className="inline-flex items-center text-sm text-hacker-green hover:text-hacker-white transition-colors"
-                >
-                  Read More <span className="ml-1 text-xs">›</span>
-                </button>
-              </article>
-            ))
-          ) : (
-            <div className="col-span-3 text-center py-10">
-              <p className="text-hacker-lightgray">No posts found with the selected tag.</p>
+          {filteredPosts.map((post) => (
+            <article key={post.id} className="border border-hacker-gray/30 bg-hacker-darkgray p-6 hover:border-hacker-green/50 transition-colors relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-b from-hacker-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+              <div className="scanlines pointer-events-none absolute inset-0 opacity-5"></div>
+              
+              <time className="text-xs text-hacker-green/70 mb-2 block">{post.date}</time>
+              <h3 className="text-xl font-bold text-hacker-green mb-3">{post.title}</h3>
+              
+              <p className="text-hacker-lightgray mb-4 line-clamp-3">
+                {post.excerpt}
+              </p>
               <button 
-                onClick={() => setSearchParams({})}
-                className="mt-4 text-hacker-green hover:text-hacker-white transition-colors"
+                onClick={() => navigate(`/blog/${post.slug}`)}
+                className="inline-flex items-center text-sm text-hacker-green hover:text-hacker-white transition-colors"
               >
-                View all posts
+                Read More <span className="ml-1 text-xs">›</span>
               </button>
-            </div>
-          )}
+            </article>
+          ))}
         </div>
         
         <div className="flex justify-center">
