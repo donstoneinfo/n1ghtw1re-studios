@@ -8,38 +8,34 @@ import { Tag as TagIcon, Rss } from 'lucide-react';
 const Blog: React.FC = () => {
   // Get all posts, sort by date
   const allPosts = getSortedBlogPosts();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [filteredPosts, setFilteredPosts] = useState(allPosts.slice(0, 3));
   
   const navigate = useNavigate();
   
+  // Initialize tag from URL and update filtering when it changes
   useEffect(() => {
-    // Initialize tag from URL if present
     const tagParam = searchParams.get('tag');
+    setSelectedTag(tagParam);
+    
+    // Apply filtering based on selected tag
     if (tagParam) {
-      setSelectedTag(tagParam);
-    }
-  }, [searchParams]);
-  
-  useEffect(() => {
-    // Filter posts based on the selected tag
-    // Home page only shows 3 most recent posts (or 3 most recent with the selected tag)
-    if (selectedTag) {
       const filtered = allPosts.filter(post => 
-        post.tags && post.tags.includes(selectedTag)
+        post.tags && post.tags.includes(tagParam)
       ).slice(0, 3);
       setFilteredPosts(filtered);
     } else {
       // If no tag selected, show the 3 most recent posts
       setFilteredPosts(allPosts.slice(0, 3));
     }
-  }, [selectedTag, allPosts]);
+  }, [searchParams, allPosts]);
   
-  // Handle tag click
+  // Handle tag click - update URL and let the effect handle filtering
   const handleTagClick = (tag: string, e: React.MouseEvent) => {
+    e.preventDefault();
     e.stopPropagation();
-    navigate(`/blog?tag=${encodeURIComponent(tag)}`);
+    setSearchParams({ tag });
   };
   
   return (
@@ -78,9 +74,9 @@ const Blog: React.FC = () => {
                 
                 {post.tags && post.tags.length > 0 && (
                   <div className="flex flex-wrap gap-2 mb-3">
-                    {post.tags.slice(0, 3).map((tag, tagIndex) => (
+                    {post.tags.slice(0, 3).map((tag) => (
                       <span 
-                        key={`${post.id}-${tag}-${tagIndex}`}
+                        key={`${post.id}-${tag}`}
                         className="inline-flex items-center bg-hacker-darkgray border border-hacker-green/30 px-2 py-0.5 text-xs text-hacker-green rounded cursor-pointer"
                         onClick={(e) => handleTagClick(tag, e)}
                       >
@@ -106,7 +102,7 @@ const Blog: React.FC = () => {
             <div className="col-span-3 text-center py-10">
               <p className="text-hacker-lightgray">No posts found with the selected tag.</p>
               <button 
-                onClick={() => setSelectedTag(null)}
+                onClick={() => setSearchParams({})}
                 className="mt-4 text-hacker-green hover:text-hacker-white transition-colors"
               >
                 View all posts
