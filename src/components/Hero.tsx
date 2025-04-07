@@ -14,12 +14,12 @@ const Hero: React.FC = () => {
 
   return (
     <section className="min-h-screen flex items-center pt-16 relative overflow-hidden crt-container crt-vignette">
-      {/* Video Background with improved brightness */}
+      {/* Video Background with improved brightness and no UI controls */}
       <div className="absolute inset-0 z-0">
         <div className="border border-hacker-green/50 w-full h-full crt-frame">
           <iframe 
             className="w-full h-full object-cover opacity-65 filter brightness-110 contrast-110 crt-content"
-            src="https://www.youtube.com/embed/GPQhIrp1AJ4?autoplay=1&loop=1&controls=0&mute=1&playlist=GPQhIrp1AJ4&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&playsinline=1"
+            src="https://www.youtube.com/embed/GPQhIrp1AJ4?autoplay=1&loop=1&controls=0&mute=1&playlist=GPQhIrp1AJ4&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&playsinline=1&enablejsapi=1&origin=https://lovable-uploads-production.s3.amazonaws.com&widget_referrer=https://lovable-uploads-production.s3.amazonaws.com&fs=0&color=white&disablekb=1&player_wide=0&hide_youtube_logo=1"
             title="Background Video"
             allow="autoplay; encrypted-media"
             allowFullScreen
