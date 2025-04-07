@@ -1,18 +1,40 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getSortedBlogPosts } from '@/data/blogPostsLoader';
+import { fetchBlogPosts, type BlogPost } from '@/utils/supabase';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useToast } from '@/components/ui/use-toast';
 
 const BlogPage = () => {
   const navigate = useNavigate();
-  const sortedPosts = getSortedBlogPosts();
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const { toast } = useToast();
 
   useEffect(() => {
     document.title = "Blog | N1ghtw1re Studios";
     window.scrollTo(0, 0);
-  }, []);
+    
+    const loadPosts = async () => {
+      try {
+        setIsLoading(true);
+        const fetchedPosts = await fetchBlogPosts();
+        setPosts(fetchedPosts);
+      } catch (error) {
+        console.error('Failed to load blog posts:', error);
+        toast({
+          title: 'Error loading posts',
+          description: 'Please try again later',
+          variant: 'destructive',
+        });
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    
+    loadPosts();
+  }, [toast]);
 
   return (
     <div className="min-h-screen bg-hacker-black text-hacker-white font-mono relative">
@@ -28,33 +50,43 @@ const BlogPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 max-w-4xl">
-            {sortedPosts.map((post) => (
-              <article key={post.id} className="border border-hacker-gray/30 bg-hacker-darkgray p-6 hover:border-hacker-green/50 transition-colors">
-                <div className="mb-4">
-                  <time className="text-sm text-hacker-green/70">{post.date}</time>
-                  <h2 className="text-2xl font-bold text-hacker-green mt-2">
-                    <button 
-                      onClick={() => navigate(`/blog/${post.slug}`)}
-                      className="hover:text-hacker-white transition-colors text-left"
-                    >
-                      {post.title}
-                    </button>
-                  </h2>
-                  <p className="text-sm text-hacker-lightgray mt-1">By {post.author}</p>
-                </div>
-                <p className="text-hacker-lightgray mb-4">
-                  {post.excerpt}
-                </p>
-                <button 
-                  onClick={() => navigate(`/blog/${post.slug}`)}
-                  className="inline-flex items-center text-sm text-hacker-green hover:text-hacker-white transition-colors"
-                >
-                  Read Full Post <span className="ml-1 text-xs">›</span>
-                </button>
-              </article>
-            ))}
-          </div>
+          {isLoading ? (
+            <div className="flex justify-center items-center h-64">
+              <div className="animate-pulse text-hacker-green">Loading posts...</div>
+            </div>
+          ) : posts.length === 0 ? (
+            <div className="text-center text-hacker-lightgray">
+              <p>No posts found. Check back soon!</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 gap-8 max-w-4xl">
+              {posts.map((post) => (
+                <article key={post.id} className="border border-hacker-gray/30 bg-hacker-darkgray p-6 hover:border-hacker-green/50 transition-colors">
+                  <div className="mb-4">
+                    <time className="text-sm text-hacker-green/70">{post.date}</time>
+                    <h2 className="text-2xl font-bold text-hacker-green mt-2">
+                      <button 
+                        onClick={() => navigate(`/blog/${post.slug}`)}
+                        className="hover:text-hacker-white transition-colors text-left"
+                      >
+                        {post.title}
+                      </button>
+                    </h2>
+                    <p className="text-sm text-hacker-lightgray mt-1">By {post.author}</p>
+                  </div>
+                  <p className="text-hacker-lightgray mb-4">
+                    {post.excerpt}
+                  </p>
+                  <button 
+                    onClick={() => navigate(`/blog/${post.slug}`)}
+                    className="inline-flex items-center text-sm text-hacker-green hover:text-hacker-white transition-colors"
+                  >
+                    Read Full Post <span className="ml-1 text-xs">›</span>
+                  </button>
+                </article>
+              ))}
+            </div>
+          )}
         </div>
       </div>
       <Footer />

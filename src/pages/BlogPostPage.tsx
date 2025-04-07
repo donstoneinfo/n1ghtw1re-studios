@@ -1,46 +1,78 @@
 
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getBlogPostBySlug, getSortedBlogPosts } from '@/data/blogPostsLoader';
+import { fetchBlogPostBySlug, fetchBlogPosts, type BlogPost } from '@/utils/supabase';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, ArrowRight, Tag, Rss } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Tag } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import { useToast } from '@/components/ui/use-toast';
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const [post, setPost] = useState(getBlogPostBySlug(slug || ''));
+  const [post, setPost] = useState<BlogPost | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [allPosts, setAllPosts] = useState<BlogPost[]>([]);
+  const { toast } = useToast();
   
-  // Get sorted posts for navigation
-  const sortedPosts = useMemo(() => {
-    return getSortedBlogPosts();
-  }, []);
-  
-  // Find current post index in the sorted array
-  const currentIndex = useMemo(() => {
-    return sortedPosts.findIndex(p => p.slug === slug);
-  }, [sortedPosts, slug]);
-  
-  // Get next and previous posts
-  const nextPost = useMemo(() => {
-    return currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
-  }, [currentIndex, sortedPosts]);
-  
-  const prevPost = useMemo(() => {
-    return currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
-  }, [currentIndex, sortedPosts]);
+  const currentIndex = allPosts.findIndex(p => p.slug === slug);
+  const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+  const prevPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
 
   useEffect(() => {
-    if (!post) {
-      navigate('/blog');
-      return;
-    }
+    const loadPost = async () => {
+      if (!slug) {
+        navigate('/blog');
+        return;
+      }
+      
+      try {
+        setIsLoading(true);
+        
+        // Load all posts for navigation
+        const posts = await fetchBlogPosts();
+        setAllPosts(posts);
+        
+        // Load current post
+        const postData = await fetchBlogPostBySlug(slug);
+        
+        if (!postData) {
+          navigate('/blog');
+          return;
+        }
+        
+        setPost(postData);
+        document.title = `${postData.title} | N1ghtw1re Studios`;
+      } catch (error) {
+        console.error('Failed to load blog post:', error);
+        toast({
+          title: 'Error loading post',
+          description: 'Please try again later',
+          variant: 'destructive',
+        });
+        navigate('/blog');
+      } finally {
+        setIsLoading(false);
+      }
+    };
     
-    document.title = `${post.title} | N1ghtw1re Studios`;
     window.scrollTo(0, 0);
-  }, [post, navigate]);
+    loadPost();
+  }, [slug, navigate, toast]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-hacker-black text-hacker-white font-mono relative">
+        <Header />
+        <div className="flex justify-center items-center h-screen">
+          <div className="animate-pulse text-hacker-green">Loading post...</div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   if (!post) return null;
 
@@ -61,17 +93,6 @@ const BlogPostPage = () => {
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Back to all posts
                 </Button>
-                
-                <a 
-                  href="/rss.xml" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-hacker-green hover:text-hacker-white transition-colors"
-                  title="Subscribe to RSS feed"
-                >
-                  <Rss className="w-4 h-4 mr-1" />
-                  RSS Feed
-                </a>
               </div>
               
               <time className="text-sm text-hacker-green/70">{post.date}</time>
