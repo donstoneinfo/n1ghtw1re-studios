@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="text-sm text-hacker-lightgray">
-            <div className="flex gap-6 mb-4 md:mb-0">
+            <div className="flex flex-wrap gap-6 mb-4 md:mb-0 justify-center">
               {[
                 { label: 'Projects', path: '#projects' },
                 { label: 'About', path: '#about' },

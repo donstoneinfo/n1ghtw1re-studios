@@ -95,6 +95,12 @@ const toolCategories: ToolCategory[] = [
         icon: null
       },
       {
+        name: "Astro",
+        description: "The web framework for content-driven websites with less JavaScript.",
+        url: "https://astro.build/",
+        icon: null
+      },
+      {
         name: "JavaScript",
         description: "The programming language of the web, enabling interactive web pages.",
         url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
