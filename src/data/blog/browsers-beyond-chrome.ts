@@ -6,7 +6,7 @@ export const post = {
     date: "2025-03-24",
     author: "N1ghtw1re Collective",
     excerpt: "It's time to ditch Chrome and reclaim a better browsing experience.",
-    content: `## Browsers Beyond Chrome
+    content: `## Browsers Beyond Chrome, Start De-Googling Today.
   
 In the vast landscape of the internet, your browser is your gateway. But not all browsers are created equal, especially when it comes to privacy. While Chrome dominates the market, its data collection practices raise serious concerns for those seeking to protect their online footprint.
 
