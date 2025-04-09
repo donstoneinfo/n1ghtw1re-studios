@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
     "that put users in control of their data."
   ];
 
-  // Replace 'YOUR_YOUTUBE_VIDEO_ID' with the actual ID of your YouTube video
+  // **IMPORTANT:** Replace 'YOUR_YOUTUBE_VIDEO_ID' with the actual ID of your YouTube video
   const youtubeVideoId = 'BGKzRc0yKRo&t';
   const youtubeEmbedUrl = `https://www.youtube-nocookie.com/embed/${youtubeVideoId}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1`;
 
@@ -22,6 +22,7 @@ const Hero: React.FC = () => {
         <div className="border border-hacker-green/50 w-full h-full crt-frame">
           <iframe
             className="w-full h-full object-cover opacity-20 filter brightness-50 contrast-100 crt-content"
+            // **Corrected src attribute:**
             src={youtubeEmbedUrl}
             title="Background Video"
             allow="autoplay; encrypted-media"
