@@ -11,7 +11,7 @@ import { post as pixelsPassionPost } from './blog/pixels-and-passion';
 import { post as ownContentPost } from './blog/owning-your-own-content';
 import { post as decodePatternsPost } from './blog/decoding-dark-patterns';
 import { post as indiewebMovementPost } from './blog/indieweb-movement';
-import { post as browserBeyonodPost } from './blog/browsers-beyond-chrome';
+import { post as browserBeyondPost } from './blog/browsers-beyond-chrome';
 
 export interface BlogPost {
   id: number;
