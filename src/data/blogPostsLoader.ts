@@ -11,6 +11,7 @@ import { post as pixelsPassionPost } from './blog/pixels-and-passion';
 import { post as ownContentPost } from './blog/owning-your-own-content';
 import { post as decodePatternsPost } from './blog/decoding-dark-patterns';
 import { post as indiewebMovementPost } from './blog/indieweb-movement';
+import { post as browserBeyonodPost } from './blog/browsers-beyond-chrome';
 
 export interface BlogPost {
   id: number;
@@ -74,6 +75,10 @@ export const blogPosts: BlogPost[] = [
   {
     ...indiewebMovementPost,
     tags: ['Ownership', 'Community', 'Collaboration']
+  },
+  {
+    ...browserBeyondPost,
+    tags: ['Privacy', 'Browsers',]
   }
   // Add more posts here as you create them
 ];
