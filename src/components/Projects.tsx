@@ -32,20 +32,20 @@ const Projects: React.FC = () => {
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
-      title: "Alpha Ascension Blog",
-      description: "Satirical take on alpha-male influencer and guru marketing schemes.",
+      title: "Circuit Breach",
+      description: "Deep philosophical dives into Cyberpunk and dystopian ficiton.",
       category: "Media",
       image: "/lovable-uploads/alpha-ascension.jpg",
-      link: "https://alpha-ascension.lovable.app/",
-      technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
+      link: "https://circuit-breach.neocities.org/",
+      technologies: ["HTML", "Javascript"]
     },
     {
-      title: "Elonopia",
-      description: "Satirical take down of the Cult of Elon Musk and the current oligarchy in the United States.",
+      title: "Vinyl Violence",
+      description: "A musical review blog showcasing the best albums of all time",
       category: "Media",
       image: "/lovable-uploads/elonopia.jpg",
-      link: "https://elonopia.lovable.app/",
-      technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
+      link: "https://vinyl-violence.netlify.app/",
+      technologies: ["HTML", "Javascript"]
     },
     {
       title: "Command & Conquer: 30 Days to Linux Mastery",
@@ -64,11 +64,11 @@ const Projects: React.FC = () => {
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
-      title: "Chronicles of Siem Reap",
-      description: "Pre-Production - Experience adventure as you solve puzzles around Siem Reap, Cambodia.",
-      category: "Apps",
+      title: "Synapse Express",
+      description: "Mnemonic Courier Service",
+      category: "Web",
       image: "/lovable-uploads/siemreap.jpg",
-      link: "#",
+      link: "#https://synapse-express.netlify.app/",
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
