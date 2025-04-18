@@ -35,7 +35,7 @@ const Projects: React.FC = () => {
       title: "Circuit Breach",
       description: "Deep philosophical dives into Cyberpunk and dystopian ficiton.",
       category: "Media",
-      image: "/lovable-uploads/alpha-ascension.jpg",
+      image: "/lovable-uploads/circuit_breach.png",
       link: "https://circuit-breach.neocities.org/",
       technologies: ["HTML", "Javascript"]
     },
@@ -43,7 +43,7 @@ const Projects: React.FC = () => {
       title: "Vinyl Violence",
       description: "A musical review blog showcasing the best albums of all time",
       category: "Media",
-      image: "/lovable-uploads/elonopia.jpg",
+      image: "/lovable-uploads/vinyl_violence.png",
       link: "https://vinyl-violence.netlify.app/",
       technologies: ["HTML", "Javascript"]
     },
@@ -67,8 +67,8 @@ const Projects: React.FC = () => {
       title: "Synapse Express",
       description: "Mnemonic Courier Service",
       category: "Web",
-      image: "/lovable-uploads/siemreap.jpg",
-      link: "#https://synapse-express.netlify.app/",
+      image: "/lovable-uploads/synapse_express.png",
+      link: "https://synapse-express.netlify.app/",
       technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     },
     {
@@ -76,8 +76,8 @@ const Projects: React.FC = () => {
       description: "A manifesto for the rest of us. A blueprint the defeating fascism in the current world.",
       category: "Media",
       image: "/lovable-uploads/project2028.jpg",
-      link: "#",
-      technologies: ["Audio Production", "Web Distribution", "RSS"]
+      link: "#https://project-2028.lovable.app/",
+      technologies: ["Vite", "TypeScript", "React", "Tailwind CSS", "shadcn-ui"]
     }
   ];
 
